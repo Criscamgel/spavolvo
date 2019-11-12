@@ -13,36 +13,45 @@
             type="text"  
             placeholder="Ingresa tus nombres y apellidos"
             name="Nombre1"
-            ngModel
+            minlength="3"
+            maxlength="20"
+            [(ngModel)]="contacto.DatosBasicos.Nombre1"
             required
+            #nombre="ngModel"
             >
         </div>
-        <small class="col-8 error">Ingresa un nombre válido</small>
+        <small *ngIf="" class="col-8 error">Ingresa un nombre válido</small>
     </div>
 
     <div class="form-group row">
         <div class="col">
             <label class="">Tipo de identificación<i>*</i></label>
-            <input 
-                type="text" 
-                class="form-control" 
-                placeholder="Apellido"
-                name="TipoDocumento"
-                ngModel
-                required
-                >
+                <label for="tipoDocumentoSelect">Tipo de identificación<i>*</i></label>
+                    <select 
+                        class="form-control"
+                        id="tipoDocumentoSelect"
+                        name="TipoDocumento"
+                        [(ngModel)]="contacto.DatosBasicos.TipoDocumento"
+                        required
+                        #tipoDocumento="ngModel"
+                        >
+                        <option value="" disabled selected>Selecciona tu tipo de Identificación</option>
+                        <option>1</option>
+                    </select>
+        
                 <small class="error">Ingresa un tipo de documento válido</small>
         </div>
 
         <div class="col">
             <label class="">Número de identificación<i>*</i></label>
             <input 
-                type="text" 
+                type="number" 
                 class="form-control" 
                 placeholder="Ingresa tu número de identificación"
                 name="NumeroDocumento"
-                ngModel
+                [(ngModel)]="contacto.DatosBasicos.NumeroDocumento"
                 required
+                #numeroDocumento="ngModel"
                 >
                 <small class="error">Ingresa un número de identificación válido</small>
         </div>
@@ -56,8 +65,9 @@
                 type="number"  
                 placeholder="Ingresa tu número"
                 name="Celular"
-                ngModel
+                [(ngModel)]="contacto.DatosBasicos.Celular"
                 required
+                #celular="ngModel"
                 >
             </div>
             <small class="col error">Ingresa un teléfono válido</small>        
@@ -71,10 +81,11 @@
                 type="email"
                 placeholder="Correo electrónico"
                 name="CorreoPersonal"
-                ngModel
+                [(ngModel)]="contacto.DatosBasicos.CorreoPersonal"
                 required
+                #correoPersonal="ngModel"
                 >
-                
+
         </div>
         <small class="col-8 error">Ingresa un correo eléctronico válido</small>
     </div>
@@ -96,8 +107,10 @@
                     value="" 
                     id="defaultCheck1"
                     name="AutorizaConsultaCentrales"
-                    ngModel
+                    [(ngModel)]="contacto.OtrosDatos.AutorizaConsultaCentrales"
+                    [(checked)]="contacto.OtrosDatos.AutorizaMareigua"
                     required
+                    #autorizaConsultaCentrales="ngModel"
                     >
                     <label class="form-check-label" for="defaultCheck1">
                       Acepto los <a href="" ngClick="">términos y condiciones</a>
@@ -111,7 +124,7 @@
     <div class="form-group row">
         <label class="col-12 col-form-label">&nbsp;</label>
         <div class="input-group col-md-8">
-        <button type="submit" class="btn btn-outline-primary">
+        <button type="" class="btn btn-outline-primary">
             Solicitar
         </button>
         </div>
@@ -125,46 +138,59 @@
     <div class="form-group row">
         <label for="" class="col-8 col-form-label">Ocupación<i>*</i></label>
         <div class="col-12">
-            <input
-            class="form-control" 
-            type="text"  
-            placeholder="Nombre"
-            name="ActividadEconomica"
-            ngModel
-            required
-            >
+                <select 
+                    class="form-control"
+                    id="tipoDocumentoSelect"
+                    name="ActividadEconomica"
+                    [(ngModel)]="contacto.DatosFinancieros.ActividadEconomica"
+                    required
+                    >
+                    <option value="" disabled selected>Selecciona tu ocupación</option>
+                    <option>1</option>
+                </select>
         </div>
         <small class="col-8 error">Selecciona tu ocupación</small>
     </div>
 
     <div class="form-group row">
             <label for="" class="col-8 col-form-label">Ingresos Mensuales<i>*</i></label>
-            <div class="col-12">
-                <input
-                class="form-control" 
-                type="number"  
-                placeholder="Nombre"
-                name="IngresoMensual"
-                ngModel
-                required
-                >
-            </div>
-            <small class="col-8 error">Inserta tus ingresos mensuales</small>        
+                <div class="input-group col-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                        <input
+                        class="form-control" 
+                        type="number"  
+                        placeholder="Ingresa el valor"
+                        name="IngresoMensual"
+                        [(ngModel)]="contacto.DatosFinancieros.IngresoMensual"
+                        required
+                        >                    
+                </div>
+
+                <small class="col error">Inserta tus ingresos mensuales</small>
+                <small class="col error">Inserta tus ingresos mensuales</small>        
+                <small class="col error">Ingresa un valor dentro del rango</small>
         </div>
 
     <div class="form-group row">
-            <label for="" class="col-8 col-form-label">¿Cuánto dinero deseas financiar?<i>*</i></label>
-            <div class="col-12">
-                <input
-                class="form-control" 
-                type="number"  
-                placeholder="Nombre"
-                name="ValorFinanciar"
-                ngModel
-                required
-                >
+
+            <label for="" class="col-12 col-form-label">¿Cuánto dinero deseas financiar?<i>*</i></label>
+            <div class="input-group">
+                <div class="col-12 input-group-prepend">
+                    <span class="input-group-text">$</span>
+                    <input
+                    class="form-control" 
+                    type="number"  
+                    placeholder="Ingresa el valor que deseas financiar"
+                    name="ValorFinanciar"
+                    [(ngModel)]="contacto.OtrosDatos.ValorFinanciar"
+                    required
+                    >
+                </div>
             </div>
-            <small class="col-8 error">Ingresa el valor a financiar</small>        
+
+            <small class="col error">Ingresa el valor a financiar</small>        
         </div>
 
     <div class="form-group row">
@@ -177,5 +203,32 @@
     </div>
 
 </section>
-
 </form>
+<!-- Sección Final -->
+<section>
+        <p class="titulo"><strong>¡Listo!</strong></p>
+
+        <hr>
+
+        <div class="aprobado">
+                <img src="assets/aprobado.png" alt="">
+                <div class="textres">
+                    <p class="titleAprobe">¡Tu solicitud es viable!</p><br>
+                    <p class="tRes">En menos de 24 horas uno de nuestros asesores se comunicará contigo para continuar tu solicitud de crédito</p>
+                </div>
+        </div>
+
+        <hr>
+
+        <div class="negado">
+                <img src="assets/negado.png" alt="">
+                <hr>
+                <div class="textdos">
+                    <p class="titleNega">¡Tu solicitud ha sido rechazada!</p>
+                    <p class="tRes">Uno de nuestros asesores se comunicarán contigo para explorar alternativas</p>
+                </div>
+                <hr>
+        </div>
+</section>
+
+<!-- <app-terminosycondiciones></app-terminosycondiciones> -->
