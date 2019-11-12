@@ -1,0 +1,181 @@
+<form novalidate="" (ngSubmit)="guardar(form)" #form="ngForm">
+
+<section>
+
+    <p class="titulo"><strong>Cuéntanos de ti</strong></p>
+    <hr>
+
+    <div class="form-group row">
+        <label for="" class="col-8 col-form-label">¿Cómo te llamas?<i>*</i></label>
+        <div class="col-12">
+            <input
+            class="form-control" 
+            type="text"  
+            placeholder="Ingresa tus nombres y apellidos"
+            name="Nombre1"
+            ngModel
+            required
+            >
+        </div>
+        <small class="col-8 error">Ingresa un nombre válido</small>
+    </div>
+
+    <div class="form-group row">
+        <div class="col">
+            <label class="">Tipo de identificación<i>*</i></label>
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Apellido"
+                name="TipoDocumento"
+                ngModel
+                required
+                >
+                <small class="error">Ingresa un tipo de documento válido</small>
+        </div>
+
+        <div class="col">
+            <label class="">Número de identificación<i>*</i></label>
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Ingresa tu número de identificación"
+                name="NumeroDocumento"
+                ngModel
+                required
+                >
+                <small class="error">Ingresa un número de identificación válido</small>
+        </div>
+    </div>
+
+    <div class="form-group row">
+            <label for="" class="col-8 col-form-label">Teléfono de contacto<i>*</i></label>
+            <div class="col-12">
+                <input
+                class="form-control" 
+                type="number"  
+                placeholder="Ingresa tu número"
+                name="Celular"
+                ngModel
+                required
+                >
+            </div>
+            <small class="col error">Ingresa un teléfono válido</small>        
+        </div>
+
+    <div class="form-group row">
+        <label for="" class="col-8 col-form-label">Correo electrónico<i>*</i></label>
+        <div class="col-12">
+
+        <input class="form-control"
+                type="email"
+                placeholder="Correo electrónico"
+                name="CorreoPersonal"
+                ngModel
+                required
+                >
+                
+        </div>
+        <small class="col-8 error">Ingresa un correo eléctronico válido</small>
+    </div>
+
+    <!-- Checkbox -->
+
+    <div class="form-group row">
+
+            <div class="col-6"></div>
+
+
+            <div class="form-check col-6">
+                    <p class="tyc">
+                    PREMIER CREDIT o el TERCERO AUTORIZADO quedan autorizados para obtener información sobre mis relaciones comerciales con otras entidades y consultar mis reportes ante las centrales de información.
+                    </p>
+                    <input 
+                    class="form-check-input" 
+                    type="checkbox" 
+                    value="" 
+                    id="defaultCheck1"
+                    name="AutorizaConsultaCentrales"
+                    ngModel
+                    required
+                    >
+                    <label class="form-check-label" for="defaultCheck1">
+                      Acepto los <a href="" ngClick="">términos y condiciones</a>
+                    </label>
+                  </div>
+        </div>
+
+    
+    <hr>
+    
+    <div class="form-group row">
+        <label class="col-12 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+        <button type="submit" class="btn btn-outline-primary">
+            Solicitar
+        </button>
+        </div>
+    </div>
+</section>
+
+<!-- Section -->
+
+<section>
+
+    <div class="form-group row">
+        <label for="" class="col-8 col-form-label">Ocupación<i>*</i></label>
+        <div class="col-12">
+            <input
+            class="form-control" 
+            type="text"  
+            placeholder="Nombre"
+            name="ActividadEconomica"
+            ngModel
+            required
+            >
+        </div>
+        <small class="col-8 error">Selecciona tu ocupación</small>
+    </div>
+
+    <div class="form-group row">
+            <label for="" class="col-8 col-form-label">Ingresos Mensuales<i>*</i></label>
+            <div class="col-12">
+                <input
+                class="form-control" 
+                type="number"  
+                placeholder="Nombre"
+                name="IngresoMensual"
+                ngModel
+                required
+                >
+            </div>
+            <small class="col-8 error">Inserta tus ingresos mensuales</small>        
+        </div>
+
+    <div class="form-group row">
+            <label for="" class="col-8 col-form-label">¿Cuánto dinero deseas financiar?<i>*</i></label>
+            <div class="col-12">
+                <input
+                class="form-control" 
+                type="number"  
+                placeholder="Nombre"
+                name="ValorFinanciar"
+                ngModel
+                required
+                >
+            </div>
+            <small class="col-8 error">Ingresa el valor a financiar</small>        
+        </div>
+
+    <div class="form-group row">
+        <label class="col-12 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+        <button type="submit" class="btn btn-outline-primary">
+            Solicitar
+        </button>
+        </div>
+    </div>
+
+</section>
+
+</form>
