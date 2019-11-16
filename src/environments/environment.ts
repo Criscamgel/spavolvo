@@ -3,7 +3,29 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  /* Options */
+  documentos:[    
+    {value:null, name:"Selecciona tu tipo de Identificación"},
+    {value:1, name:"Cédula de Ciudadanía"},
+    {value:2, name:"Cédula de Extranjería"},
+    {value:3, name:"NIT"}
+   ],
+
+   ocupaciones:[
+    {value:null, name:"Selecciona tu ocupación"},
+    {value:1, name:"Pensionado"}, /* 15 */
+    {value:11, name:"Empleado"}, /* 16 */
+    {value:2, name:"Independiente"} /* 3 */
+   ],
+  
+
+  /* Regex */
+  patternLetter: "^[a-zA-Z áéíóúñÁÉÍÓÚÑ]+$",
+  patternNumber: "^[0-9]+$",
+  patternMail:"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$"
+
 };
 
 /*

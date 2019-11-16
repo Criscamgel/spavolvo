@@ -1,4 +1,4 @@
-<form novalidate="" (ngSubmit)="guardar(form)" #form="ngForm">
+<form novalidate="" (ngSubmit)="guardar(form)" #formTc="ngForm">
 
     <section>
     
@@ -14,46 +14,55 @@
                 placeholder="Ingresa tus nombres y apellidos"
                 name="Nombre1"
                 minlength="3"
-                maxlength="20"
+                maxlength="90"
                 [(ngModel)]="contacto.DatosBasicos.Nombre1"
-                required
                 #nombre="ngModel"
+                (keypress)="oldLetters($event)"
+                [(pattern)]="env.patternLetter"
+                required
                 >
             </div>
-            <small *ngIf="" class="col-8 error">Ingresa un nombre válido</small>
+            <small *ngIf="nombre.touched && nombre.errors?.required" class="col-8 error">Necesitamos saber tu nombre</small>
+            <small *ngIf="nombre.touched && nombre.errors?.minlength" class="col-8 error">Ingresa un nombre más largo</small>
+            <small *ngIf="nombre.errors?.pattern" class="col-8 error">Ingresa un nombre válido</small>
         </div>
     
         <div class="form-group row">
             <div class="col">
                 <label class="">Tipo de identificación<i>*</i></label>
-                    <label for="tipoDocumentoSelect">Tipo de identificación<i>*</i></label>
                         <select 
                             class="form-control"
                             id="tipoDocumentoSelect"
                             name="TipoDocumento"
                             [(ngModel)]="contacto.DatosBasicos.TipoDocumento"
-                            required
                             #tipoDocumento="ngModel"
+                            required
                             >
-                            <option value="" disabled selected>Selecciona tu tipo de Identificación</option>
-                            <option>1</option>
+                            <option *ngFor="let obj of env.documentos" [ngValue]="obj.value" [disabled]="obj.value == 0">{{obj.name}}</option>
                         </select>
             
-                    <small class="error">Ingresa un tipo de documento válido</small>
+                        <small *ngIf="tipoDocumento.touched && tipoDocumento.errors?.required" class="col-8 error">Necesitamos saber tu tipo de identificación</small>
             </div>
     
             <div class="col">
                 <label class="">Número de identificación<i>*</i></label>
                 <input 
-                    type="number" 
+                    type="tel" 
                     class="form-control" 
                     placeholder="Ingresa tu número de identificación"
                     name="NumeroDocumento"
                     [(ngModel)]="contacto.DatosBasicos.NumeroDocumento"
+                    #numeroDocumento="ngModel"                    
+                    [(pattern)]="env.patternNumber"
+                    minlength="6"
+                    maxlength="15"
+                    (keypress)="oldNumbers($event)"
                     required
-                    #numeroDocumento="ngModel"
                     >
-                    <small class="error">Ingresa un número de identificación válido</small>
+                    <small *ngIf="numeroDocumento.touched && numeroDocumento.errors?.required" class="error">Necesitamos saber tu número de identificación</small>
+                    <small *ngIf="numeroDocumento.errors?.minlength" class="error">Minimo {{numeroDocumento.errors.minlength.requiredLength}} digitos</small>
+                    <small *ngIf="numeroDocumento.errors?.pattern" class="col-8 error">Ingresa un número de identificación válido</small>
+                    
             </div>
         </div>
     
@@ -62,15 +71,22 @@
                 <div class="col-12">
                     <input
                     class="form-control" 
-                    type="number"  
+                    type="tel"  
                     placeholder="Ingresa tu número"
                     name="Celular"
                     [(ngModel)]="contacto.DatosBasicos.Celular"
-                    required
+                    [(pattern)]="env.patternNumber"
+                    minlength="7" 
+                    maxlength="10"
                     #celular="ngModel"
+                    (keypress)="oldNumbers($event)"
+                    required
                     >
-                </div>
-                <small class="col error">Ingresa un teléfono válido</small>        
+
+                    <small *ngIf="celular.touched && celular.errors?.required" class="error">Necesitamos saber tu Teléfono de contacto</small>
+                    <small *ngIf="celular.errors?.minlength" class="error">Minimo {{celular.errors.minlength.requiredLength}} digitos</small>
+                    <small *ngIf="celular.errors?.pattern" class="col-8 error">Ingresa un teléfono de contacto válido</small>
+                </div>     
             </div>
     
         <div class="form-group row">
@@ -82,12 +98,13 @@
                     placeholder="Correo electrónico"
                     name="CorreoPersonal"
                     [(ngModel)]="contacto.DatosBasicos.CorreoPersonal"
-                    required
                     #correoPersonal="ngModel"
-                    >
-    
+                    [(pattern)]="env.patternMail"
+                    required
+                    >    
             </div>
-            <small class="col-8 error">Ingresa un correo eléctronico válido</small>
+            <small *ngIf="correoPersonal.touched && correoPersonal.errors?.required" class="col-8 error">Necesitamos saber tu correo electrónico</small>
+            <small *ngIf="correoPersonal.errors?.pattern" class="col-8 error">Ingresa un correo electrónico válido</small>
         </div>
     
         <!-- Checkbox -->
@@ -108,9 +125,9 @@
                         id="defaultCheck1"
                         name="AutorizaConsultaCentrales"
                         [(ngModel)]="contacto.OtrosDatos.AutorizaConsultaCentrales"
-                        [(checked)]="contacto.OtrosDatos.AutorizaMareigua"
-                        required
+                        (click)="chechedc()"
                         #autorizaConsultaCentrales="ngModel"
+                        required
                         >
                         <label class="form-check-label" for="defaultCheck1">
                           Acepto los <a href="" ngClick="">términos y condiciones</a>
@@ -124,7 +141,7 @@
         <div class="form-group row">
             <label class="col-12 col-form-label">&nbsp;</label>
             <div class="input-group col-md-8">
-            <button type="" class="btn btn-outline-primary">
+            <button type="" [disabled]="autorizaConsultaCentrales.invalid || correoPersonal.invalid || celular.invalid || numeroDocumento.invalid || tipoDocumento.invalid || nombre.invalid" class="btn btn-outline-primary">
                 Solicitar
             </button>
             </div>
@@ -140,16 +157,16 @@
             <div class="col-12">
                     <select 
                         class="form-control"
-                        id="tipoDocumentoSelect"
+                        id="ocupacionSelect"
                         name="ActividadEconomica"
                         [(ngModel)]="contacto.DatosFinancieros.ActividadEconomica"
+                        #ocupacion="ngModel"
                         required
                         >
-                        <option value="" disabled selected>Selecciona tu ocupación</option>
-                        <option>1</option>
+                        <option *ngFor="let obj of env.ocupaciones" [ngValue]="obj.value" [disabled]="obj.value == 0">{{obj.name}}</option>
                     </select>
+                    <small *ngIf="ocupacion.touched && ocupacion.errors?.required" class="col-8 error">Necesitamos saber tu Ocupación</small>
             </div>
-            <small class="col-8 error">Selecciona tu ocupación</small>
         </div>
     
         <div class="form-group row">
@@ -160,10 +177,13 @@
                         </div>
                             <input
                             class="form-control" 
-                            type="number"  
+                            type="tel"  
                             placeholder="Ingresa el valor"
-                            name="IngresoMensual"
+                            name="ingresoMensual"
+                            #ingresoMensual="ngModel"
                             [(ngModel)]="contacto.DatosFinancieros.IngresoMensual"
+                            (ngModelChange)="contacto.DatosFinancieros.IngresoMensual = currencyInputChanged($event)"
+                            (keypress)="oldNumbers($event)"
                             required
                             >                    
                     </div>
@@ -180,11 +200,14 @@
                     <div class="col-12 input-group-prepend">
                         <span class="input-group-text">$</span>
                         <input
-                        class="form-control" 
-                        type="number"  
+                        class="form-control"
+                        type="tel"  
                         placeholder="Ingresa el valor que deseas financiar"
-                        name="ValorFinanciar"
-                        [(ngModel)]="contacto.OtrosDatos.ValorFinanciar"
+                        name="valorFinanciar"
+                        #ValorFinanciar="ngModel"
+                        [(ngModel)]="contacto.DatosFinancieros.ValorFinanciar"
+                        (ngModelChange)="contacto.DatosFinancieros.ValorFinanciar = currencyInputChanged($event)"
+                        (keypress)="oldNumbers($event)"
                         required
                         >
                     </div>
@@ -196,7 +219,7 @@
         <div class="form-group row">
             <label class="col-12 col-form-label">&nbsp;</label>
             <div class="input-group col-md-8">
-            <button type="submit" class="btn btn-outline-primary">
+            <button type="submit" [disabled]="formTc.form.invalid" class="btn btn-outline-primary">
                 Solicitar
             </button>
             </div>
