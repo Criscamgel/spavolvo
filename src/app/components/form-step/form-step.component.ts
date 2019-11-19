@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
 @Component({
-  selector: 'app-template',
-  templateUrl: './template.component.html',
-  styles: []
+  selector: 'app-form-step',
+  templateUrl: './form-step.component.html',
+  styleUrls: ['./form-step.component.css']
 })
-export class TemplateComponent {
+export class FormStepComponent implements OnInit {
 
   constructor() { }
-  
+
   env = environment;
 
   contacto:Object = {
@@ -37,13 +36,14 @@ export class TemplateComponent {
 
   /* Functions */
 
-  oldLetters(event: any) {
+  oldLetters(event: any) {    
     const pattern =  new RegExp(environment.patternLetter);    
     let inputChar = String.fromCharCode(event.charCode);
     if (event.keyCode != 8 && !pattern.test(inputChar)) {
       event.preventDefault();
     }
   }
+
   oldNumbers(event: any) {
     const pattern =  new RegExp(environment.patternNumber);    
     let inputChar = String.fromCharCode(event.charCode);
@@ -64,8 +64,7 @@ export class TemplateComponent {
     return value;    
   }
 
-  guardar(form:NgForm){
-    console.log("Form ", form);
-    console.log("Contacto", this.contacto);  
+  ngOnInit() {
   }
+
 }

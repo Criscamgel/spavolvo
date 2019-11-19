@@ -1,0 +1,140 @@
+<mat-horizontal-stepper linear>
+        <mat-step label='' 
+        [stepControl]="formTc"
+        (selectionChange)="stepChanged($event, stepper);"
+        >            
+
+                        <!-- Formulario -->
+                        
+                        <form #formTc="ngForm">
+                                <mat-form-field class="full-width">
+                                    <input 
+                                    matInput 
+                                    placeholder="¿Cómo te llamas?"
+                                    name="Nombre1"
+                                    minlength="3"
+                                    maxlength="90"
+                                    [(ngModel)]="contacto.DatosBasicos.Nombre1"
+                                    #nombre="ngModel" 
+                                    (keypress)="oldLetters($event)"
+                                    required>
+                                    <small *ngIf="nombre.touched && nombre.errors?.required">Necesitamos saber tu nombre</small>
+                                    <small *ngIf="nombre.touched && nombre.errors?.minlength">Ingresa un nombre más largo</small>
+                                    <small *ngIf="nombre.errors?.pattern">Ingresa un nombre válido</small>                        
+                                </mat-form-field>
+
+                                <div class="row">
+                                <div class="col-sm col-md-6 col-lg-6">
+                                        <mat-form-field class="full-width">
+                                                <mat-label>Tipo de Identificación</mat-label>
+                                                <select 
+                                                    matNativeControl
+                                                    name="TipoDocumento"
+                                                    [(ngModel)]="contacto.DatosBasicos.TipoDocumento"
+                                                    #tipoDocumento="ngModel" 
+                                                    required
+                                                >
+                                                    <option *ngFor="let obj of env.documentos" [ngValue]="obj.value" [disabled]="obj.value == 0">{{obj.name}}</option>
+                                                    <small *ngIf="tipoDocumento.touched && tipoDocumento.errors?.required">Necesitamos saber tu tipo de identificación</small>
+                                                </select>
+                                        </mat-form-field>
+                                </div>
+                                <div class="col-sm col-md-6 col-lg-6">
+                                <mat-form-field class="full-width">
+                                        <input 
+                                        matInput
+                                        type="tel"
+                                        name="NumeroDocumento"
+                                        [(ngModel)]="contacto.DatosBasicos.NumeroDocumento"
+                                        #numeroDocumento="ngModel"
+                                        minlength="6"
+                                        maxlength="15"
+                                        placeholder="Número de Identificación"
+                                        (keypress)="oldNumbers($event)"
+                                        required>
+                                        <small *ngIf="numeroDocumento.touched && numeroDocumento.errors?.required" class="error">Necesitamos saber tu número de identificación</small>
+                                        <small *ngIf="numeroDocumento.errors?.minlength" class="error">Minimo {{numeroDocumento.errors.minlength.requiredLength}} digitos</small>
+                                        <small *ngIf="numeroDocumento.errors?.pattern" class="col-8 error">Ingresa un número de identificación válido</small>                       
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-sm col-md col-lg">
+                                    <mat-form-field class="full-width">
+                                            <input 
+                                            matInput 
+                                            type="tel"  
+                                            placeholder="Teléfono de contácto"
+                                            name="Celular"
+                                            [(ngModel)]="contacto.DatosBasicos.Celular"
+                                            minlength="7" 
+                                            maxlength="10"
+                                            #celular="ngModel"
+                                            (keypress)="oldNumbers($event)"
+                                            required
+                                            >
+                                            <small *ngIf="celular.touched && celular.errors?.required" class="error">Necesitamos saber tu Teléfono de contacto</small>
+                                            <small *ngIf="celular.errors?.minlength" class="error">Minimo {{celular.errors.minlength.requiredLength}} digitos</small>
+                                            <small *ngIf="celular.errors?.pattern" class="col-8 error">Ingresa un teléfono de contacto válido</small>                        
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-sm col-md col-lg">
+                                    <mat-form-field class="full-width">
+                                        <input
+                                        matInput
+                                        type="email"
+                                        placeholder="Correo electrónico"
+                                        name="CorreoPersonal"
+                                        [(ngModel)]="contacto.DatosBasicos.CorreoPersonal"
+                                        #correoPersonal="ngModel"
+                                        [(pattern)]="env.patternMail"
+                                        required
+                                        >                                       
+                                        <small *ngIf="correoPersonal.touched && correoPersonal.errors?.required" class="error">Necesitamos saber tu correo electrónico</small>
+                                        <small *ngIf="correoPersonal.touched && correoPersonal.errors?.pattern" class="error">Ingresa un correo electrónico válido</small>                                                            
+                                    </mat-form-field>
+                                    <hr>                                                                       
+                                </div>
+
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                                        <img src="" alt="">
+                                    </div>
+                                    
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                                    <p>
+                                            PREMIER CREDIT o el TERCERO AUTORIZADO quedan autorizados para obtener información sobre mis relaciones comerciales con otras entidades y consultar mis reportes ante las centrales de información.
+                                    </p>    
+                                    </div>
+
+                                    <div class="col">
+                                        <mat-checkbox 
+                                        required
+                                        value="" 
+                                        id="defaultCheck1"
+                                        name="AutorizaConsultaCentrales"
+                                        [(ngModel)]="contacto.OtrosDatos.AutorizaConsultaCentrales"
+                                        (click)="chechedc()"
+                                        #autorizaConsultaCentrales="ngModel"
+                                        >Acepto los <a href="" ngClick="">términos y condiciones</a></mat-checkbox>
+                                    </div>
+
+                                    <div class="col">
+                                            <button mat-button class="full-width" matStepperNext [disabled]="autorizaConsultaCentrales.invalid || correoPersonal.invalid || celular.invalid || numeroDocumento.invalid || tipoDocumento.invalid || nombre.invalid">Solicitar</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        
+      
+        </mat-step>
+        <mat-step label='' completed="false">
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        
+        </mat-step>
+        <mat-step label='Paso 3'>
+          <p>Paso 3</p>
+        </mat-step>
+      </mat-horizontal-stepper>

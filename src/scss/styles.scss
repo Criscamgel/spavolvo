@@ -1,3 +1,26 @@
+/* Imports */
 .ng-invalid.ng-touched:not(form){
-    border: 1px solid red;
+    color: red;
+}
+
+button:focus {
+    -webkit-appearance: initial;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.mat-button{
+    background: #2A9FD8;
+    color: #fff;
+    &:disabled{
+        background: #C2C2C2;
+    }
+}
+
+.cdk-focused{
+    background: #fff;
+    color: #2A9FD8;
+    border: 1px solid #2A9FD8;    
 }
