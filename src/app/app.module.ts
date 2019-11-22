@@ -8,6 +8,10 @@ import { TerminosycondicionesComponent } from './components/terminosycondiciones
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormStepComponent } from './components/form-step/form-step.component';
+import { CurrencyDirective } from './directives/currency.directive';
+import { ToNumberPipe } from './pipes/to-number.pipe';
+import { CustomMinDirective } from './directives/custom-min.directive';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -15,14 +19,18 @@ import { FormStepComponent } from './components/form-step/form-step.component';
     TemplateComponent,
     DataComponent,
     TerminosycondicionesComponent,
-    FormStepComponent
+    FormStepComponent,
+    CurrencyDirective,
+    ToNumberPipe,
+    CustomMinDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,7 +17,9 @@
                 maxlength="90"
                 [(ngModel)]="contacto.DatosBasicos.Nombre1"
                 #nombre="ngModel"
-                (keypress)="oldLetters($event)"
+                (keypress)="oldLetters($event)"                
+                (ngModelChange)="contacto.DatosFinancieros.IngresoMensual=$event"
+                (keypress)="logValue($event)"
                 [(pattern)]="env.patternLetter"
                 required
                 >
@@ -103,8 +105,8 @@
                     required
                     >    
             </div>
-            <small *ngIf="correoPersonal.touched && correoPersonal.errors?.required" class="col-8 error">Necesitamos saber tu correo electrónico</small>
-            <small *ngIf="correoPersonal.errors?.pattern" class="col-8 error">Ingresa un correo electrónico válido</small>
+            <small *ngIf="correoPersonal.touched && correoPersonal.errors?.required" class="col-12 error">Necesitamos saber tu correo electrónico</small>
+            <small *ngIf="correoPersonal.errors?.pattern" class="col-12 error">Ingresa un correo electrónico válido</small>
         </div>
     
         <!-- Checkbox -->

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { CentralesService } from '../../services/centrales.service';
+
 
 @Component({
   selector: 'app-form-step',
@@ -8,9 +10,15 @@ import { environment } from '../../../environments/environment';
 })
 export class FormStepComponent implements OnInit {
 
-  constructor() { }
+  constructor(private centrales: CentralesService) { }
+  
 
+  mail = RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
   env = environment;
+  modal:boolean = false;
+
+  min = 1200000
+  minF = 10000000
 
   contacto:Object = {
     DatosBasicos: {
@@ -28,8 +36,8 @@ export class FormStepComponent implements OnInit {
     },
   
     OtrosDatos: {  
-      AutorizaConsultaCentrales: null,  
-      AutorizaMareigua: null,  
+      AutorizaConsultaCentrales: false,  
+      AutorizaMareigua: false,  
       ValorFinanciar: null  
     }
   }
@@ -56,13 +64,23 @@ export class FormStepComponent implements OnInit {
     this.contacto.OtrosDatos.AutorizaMareigua = true       
   }
 
-  currencyInputChanged(value) {
-    let regexD = /(\d)(?=(\d{3})+(?!\d))/g;
-    let regexN = /[^\d\.]+/g;
-    value = value.toString().replace(regexN, "").replace(regexD, "$1,");
-    console.log("value", value);    
-    return value;    
+  sendCentrales(this){
+    this.centrales.authenticate(this.contacto);    
   }
+
+  toNumber(val){
+    let valArr=val.split('');
+    let valFiltered = valArr.filter(x=> !isNaN(x))
+    let valProcessed = valFiltered.join('')     
+    return Number(valProcessed);
+   }
+
+   checkTyc(this){
+    this.modal=false; 
+    this.contacto.OtrosDatos.AutorizaConsultaCentrales=true;
+    this.contacto.OtrosDatos.AutorizaMareigua=true;
+   }
+   
 
   ngOnInit() {
   }

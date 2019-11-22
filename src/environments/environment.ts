@@ -13,6 +13,9 @@ export const environment = {
     {value:3, name:"NIT"}
    ],
 
+   min: 1200000,
+   minF: 1000000,
+
    ocupaciones:[
     {value:null, name:"Selecciona tu ocupación"},
     {value:1, name:"Pensionado"}, /* 15 */
@@ -24,7 +27,17 @@ export const environment = {
   /* Regex */
   patternLetter: "^[a-zA-Z áéíóúñÁÉÍÓÚÑ]+$",
   patternNumber: "^[0-9]+$",
-  patternMail:"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$"
+  patternMail: RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"),
+
+  /* Urls */
+  urlAt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/login/authenticate",
+  /*urlAp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/login/authenticate" */
+  urlVt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/viabilizacion/getviabilizacion",
+  /*urlVp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/viabilizacion/getviabilizacion" */
+
+  /* Credentials */
+  username: "TuCarro",
+  password: "tuC@rr02019"
 
 };
 
