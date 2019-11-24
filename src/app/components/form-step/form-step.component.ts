@@ -69,6 +69,8 @@ export class FormStepComponent{
   }
 
   toNumber(val){
+    console.log("val", val);
+    
     let valArr=val.split('');
     let valFiltered = valArr.filter(x=> !isNaN(x))
     let valProcessed = valFiltered.join('')     

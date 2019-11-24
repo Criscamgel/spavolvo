@@ -1,5 +1,5 @@
 <mat-horizontal-stepper linear>
-        <mat-step label=''>            
+        <mat-step label='' [stepControl]="formTc">            
 
                         <!-- Formulario -->
                         
@@ -161,7 +161,7 @@
 
         <!-- Paso 2 -->
 
-        <mat-step label=''>
+        <mat-step label='' [stepControl]="formTct">
             <form #formTct="ngForm" (ngSubmit)="sendCentrales()">
                 <div class="row">
 
@@ -195,8 +195,8 @@
                                     [customMin]="min"
                                     appCurrency
                                     required>
-                                    <small *ngIf="ingresoMensual.touched && ingresoMensual.errors?.required" class="error">Inserta tus ingresos mensuales</small>       
-                                    <small *ngIf="ingresoMensual.touched && ingresoMensual.errors?.customMin" class="error">Ingresa un valor mayor</small>
+                                    <small *ngIf="ingresoMensual.touched && ingresoMensual.errors?.required" class="error col-12">Inserta tus ingresos mensuales</small>       
+                                    <small *ngIf="ingresoMensual.touched && ingresoMensual.errors?.customMin" class="error col-12">Ingresa un valor mayor</small>
                                 </mat-form-field>
                             <hr>
                     </div> 
@@ -212,11 +212,12 @@
                                     #valorFinanciar="ngModel"
                                     [(ngModel)]="contacto.OtrosDatos.ValorFinanciar"
                                     (blur)="contacto.OtrosDatos.ValorFinanciar = toNumber($event.target.value)"
+                                    minlength="11"
                                     [customMin]="minF"
                                     appCurrency
                                     required>
-                                    <small *ngIf="valorFinanciar.touched && valorFinanciar.errors?.required" class="error">Inserta tus ingresos mensuales</small>   
-                                    <small *ngIf="valorFinanciar.touched && valorFinanciar.errors?.customMin" class="error">Ingresa un valor mayor</small>
+                                    <small *ngIf="valorFinanciar.touched && valorFinanciar.errors?.required" class="error error col-12">Inserta el valor a financiar</small>   
+                                    <small *ngIf="valorFinanciar.errors?.customMin && valorFinanciar.errors?.minlength" class="error error col-12">Ingresa un valor mayor</small>
                                 </mat-form-field>
                             <hr>
                     </div>
