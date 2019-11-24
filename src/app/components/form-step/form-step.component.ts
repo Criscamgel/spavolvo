@@ -8,7 +8,7 @@ import { CentralesService } from '../../services/centrales.service';
   templateUrl: './form-step.component.html',
   styleUrls: ['./form-step.component.css']
 })
-export class FormStepComponent implements OnInit {
+export class FormStepComponent{
 
   constructor(private centrales: CentralesService) { }
   
@@ -17,10 +17,10 @@ export class FormStepComponent implements OnInit {
   env = environment;
   modal:boolean = false;
 
-  min = 1200000
-  minF = 10000000
+  min = this.env.min
+  minF = this.env.minF
 
-  contacto:Object = {
+  contacto:ContactoInterface = {
     DatosBasicos: {
       TipoDocumento: null,  
       NumeroDocumento: null,  
@@ -80,9 +80,35 @@ export class FormStepComponent implements OnInit {
     this.contacto.OtrosDatos.AutorizaConsultaCentrales=true;
     this.contacto.OtrosDatos.AutorizaMareigua=true;
    }
-   
+}
 
-  ngOnInit() {
-  }
+export interface DatosBasicos {
+  
+  Nombre1?: String; 
+  TipoDocumento?: String;  
+  NumeroDocumento?: String;  
+  Celular?: String;  
+  CorreoPersonal?: String;
+}
 
+export interface DatosFinancieros {
+  
+  ActividadEconomica?: Number;  
+  ActividadIndependiente?: Number;  
+  IngresoMensual?: Number;
+  
+}
+
+export interface OtrosDatos {
+  
+  AutorizaConsultaCentrales?: Boolean;  
+  AutorizaMareigua?: Boolean;  
+  ValorFinanciar?: Number;
+}
+
+export interface ContactoInterface{
+
+  DatosBasicos?:DatosBasicos;
+  DatosFinancieros?:DatosFinancieros;
+  OtrosDatos?:OtrosDatos;
 }

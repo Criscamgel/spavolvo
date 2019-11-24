@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment';
 export class CentralesService {
 
   token:any;
+  env = environment;
 
   headers = new HttpHeaders ({
     'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8',
@@ -25,8 +26,8 @@ export class CentralesService {
   authenticate(contacto){
 
     const bodyT = {
-      Username: environment.username,
-      Password: environment.password
+      Username: this.env.username,
+      Password: this.env.password
     }
 
     const body = new HttpParams({fromObject:bodyT}) 
@@ -55,7 +56,7 @@ export class CentralesService {
       console.log("contacto --> ", contacto);
       console.log("this.optionsVi ---> ", this.optionsVi);
       
-      return this.http.post(`${environment.urlVt}`, contacto, this.optionsVi)
+      return this.http.post(`${this.env.urlVt}`, contacto, this.optionsVi)
       .subscribe((resp:any) => {
             console.log("resp -->", resp);          
         })    
