@@ -218,7 +218,7 @@
                                     appCurrency
                                     required>
                                     <small *ngIf="valorFinanciar.touched && valorFinanciar.errors?.required" class="error error col-12">Inserta el valor a financiar</small>   
-                                    <small *ngIf="valorFinanciar.errors?.customMin" class="error error col-12">Ingresa un valor mayor</small>
+                                    <small *ngIf="valorFinanciar.touched && valorFinanciar.errors?.customMin" class="error error col-12">Ingresa un valor mayor</small>
                                 </mat-form-field>
                             <hr>
                     </div>
