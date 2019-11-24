@@ -16,6 +16,7 @@ export class FormStepComponent{
   mail = RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
   env = environment;
   modal:boolean = false;
+  valorFinanciarCop:any;
 
   min = this.env.min
   minF = this.env.minF

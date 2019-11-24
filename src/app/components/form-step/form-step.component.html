@@ -211,19 +211,20 @@
                                     name="valorFinanciar"
                                     #valorFinanciar="ngModel"
                                     [(ngModel)]="contacto.OtrosDatos.ValorFinanciar"
+                                    (ngModelChange)="valorFinanciarCop = toNumber($event)"
                                     (blur)="contacto.OtrosDatos.ValorFinanciar = toNumber($event.target.value)"
                                     minlength="11"
                                     [customMin]="minF"
                                     appCurrency
                                     required>
                                     <small *ngIf="valorFinanciar.touched && valorFinanciar.errors?.required" class="error error col-12">Inserta el valor a financiar</small>   
-                                    <small *ngIf="valorFinanciar.errors?.customMin && valorFinanciar.errors?.minlength" class="error error col-12">Ingresa un valor mayor</small>
+                                    <small *ngIf="valorFinanciar.errors?.customMin" class="error error col-12">Ingresa un valor mayor</small>
                                 </mat-form-field>
                             <hr>
                     </div>
 
                     <div class="col-12 col-sm-12">
-                        <button class="full-width" type="submit" matStepperNext [disabled]="formTct.invalid" mat-button>Solicitar</button>
+                        <button class="full-width" type="submit" matStepperNext [disabled]="formTct.invalid || valorFinanciarCop < 10000000" mat-button>Solicitar</button>
                     </div>                    
                     
                 </div> <!-- Row -->
