@@ -26,10 +26,9 @@ body {
 }
 
 /* Principal Step */
-app-form-step {
-  margin-top: 50px;
-}
-
+/* app-form-step{
+    margin-top:50px;
+} */
 .ng-invalid.ng-touched:not(form), .ng-invalid.ng-valid:not(form) {
   color: #fd0019;
 }
@@ -131,11 +130,8 @@ button {
   margin: 0px 0px 10px 0px !important;
 }
 
-.titleModal {
-  text-align: center;
-  padding: 20px 0px 0px 0px;
-  font-weight: 500;
-  font-size: 17px;
+.titlesPpal.row {
+  margin-top: 50px;
 }
 
 .hrModal {
@@ -155,6 +151,10 @@ button {
 
 .cntTitlem .titleModal {
   grid-column: 2;
+  text-align: center;
+  padding: 20px 0px 0px 0px;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .encMercadolibre {
@@ -177,15 +177,7 @@ button {
 .row.principal.grid {
   background-color: transparent;
   margin: 0px !important;
-  grid-template-rows: 1fr 1fr;
-}
-
-.row.principal.grid app-form-step {
-  grid-row: 1;
-}
-
-.row.principal.grid app-footer {
-  grid-row: 6;
+  display: block;
 }
 
 .mat-stepper-horizontal, .mat-stepper-vertical {
@@ -210,6 +202,7 @@ button {
   height: 100%;
   position: absolute;
   width: 100%;
+  top: 0px;
   -webkit-animation: slide 2s linear 1;
   animation: slide 2s linear 1;
 }
