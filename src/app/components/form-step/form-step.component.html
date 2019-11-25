@@ -6,13 +6,16 @@
             Obten aquí una respuesta inmediata
     </div>
 </div>
+
+
+
 <mat-horizontal-stepper linear>
-        <mat-step label='' [stepControl]="formTc">            
+        <mat-step label='' class="primerStep">            
 
                         <!-- Formulario -->
                         
                         <form #formTc="ngForm">
-                                <div class="row absolute">
+                                <div class="row absolute unoStep">
                                 <div class="col-12 col-sm-12">
                                     <div class="title">Cuéntanos de ti</div>
                                     <hr>
@@ -170,9 +173,9 @@
 
         <!-- Paso 2 -->
 
-        <mat-step label='' [stepControl]="formTct">
+        <mat-step label=''>
             <form #formTct="ngForm" (ngSubmit)="sendCentrales()">
-                <div class="row absolute">
+                <div class="row absolute dosStep">
                     <div class="col-12 col-sm-12">
                     <div class="title">Hablemos de tus ingresos</div>
                     <hr>
@@ -240,20 +243,23 @@
         </mat-step><!-- Finaliza Paso 2 -->
         
 <!-- Paso 3 --><mat-step label=''>
-          <div class="row">
-              <mat-spinner></mat-spinner>
-              <div class="col-12 container text-center">                
-                <p class="title">¡listo!</p>
-                <hr>  
-                <img class="img-fluid" src="../../../assets/aprobado.png" alt="">
-                <p class="aprobado">¡Tu solicitud es viable!</p>
-                <p class="small">
-                 En menos de 24 horas uno de nuestros asesores se comunicará contigo para continuar tu solicitud de crédito 
-                </p>
-                <hr>
-              </div>
+        <div class="row absolute tresStep">
+                <div class="text-center col-12 col-sm-12">                    
+                    <div class="col-12 container text-center">
+                      <!-- <div class="col-12 spinnerCont">
+                        <mat-spinner></mat-spinner>
+                     </div>   -->              
+                    <p class="title">¡listo!</p>
+                    <hr>  
+                    <img class="img-fluid" src="../../../assets/aprobado.png" alt="">
+                    <p class="aprobado">¡Tu solicitud es viable!</p>
+                    <p class="small">
+                    En menos de 24 horas uno de nuestros asesores se comunicará contigo para continuar tu solicitud de crédito 
+                    </p>
+                    <hr>
+                </div>
 
-              <div class="col-12 container text-center">
+              <!-- <div class="col-12 container text-center">
                 <p class="title">¡listo!</p>
                 <hr>  
                 <img class="img-fluid" src="../../../assets/negado.png" alt="">
@@ -262,10 +268,20 @@
                     Uno de nuestros asesores se comunicarán contigo para explorar alternativas 
                 </p>
                 <hr>
-              </div>               
+              </div>  -->              
           </div>
-        </mat-step><!-- Finaliza Paso 3 -->
-    </mat-horizontal-stepper>     
+        </div>
+        </mat-step><!-- Finaliza Paso 3 -->        
+    </mat-horizontal-stepper>
+
+    <div class="row">
+            <div class="col-12 text-center pie">
+                    <div class="container">
+                    <img src="../assets/santandergris.png" alt="" class="col-12 santanderGray"><br>
+                    <p class="small">© 2019 - Solicitud de Crédito - Entidad Vigilada por la Superintendencia Financiera de Colombia</p>
+                    </div>
+            </div>
+    </div>
             
             
 

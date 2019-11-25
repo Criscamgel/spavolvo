@@ -5,6 +5,10 @@ html{
     overflow-x: hidden;
 }
 
+.row{
+    position: inherit !important;
+}
+
 body{
     background-color: $color-fondo !important;
 }
@@ -160,7 +164,7 @@ button{
     grid-template-columns: 0.3fr 1fr 0.3fr;
     position: fixed !important;
     width: 100%;
-    z-index: 9999;
+    z-index: 1;
     top: 0;
     height: 50px;
     img{
@@ -170,9 +174,16 @@ button{
     }
 }
 
-.row.principal{
+.row.principal.grid{
     background-color: $color-transparent;
     margin: 0px !important;
+    grid-template-rows: 1fr 1fr;
+        app-form-step{
+            grid-row: 1;
+        }
+        app-footer{
+            grid-row: 6;
+        }   
 }
 
 .mat-stepper-horizontal, .mat-stepper-vertical {
@@ -189,11 +200,76 @@ button{
     }
 }
 
+.splash{
+    opacity: 0;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    background-color: $color-mercadolibre;
+    z-index: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    animation: slide 2s linear 1;
+        .mercadoLogo{
+            align-self: center;
+            justify-self: center;
+        }
+        .santander{
+            grid-row: 2;
+            align-self: end;
+            justify-self: center;
+        }
+        .poBy{
+            grid-row: 3;
+            align-self: initial;
+            justify-self: center;
+        }
+    
+}
+
+@keyframes slide {
+    0% {
+        z-index: 3;
+        opacity: 0;
+    }
+    20% {
+        z-index: 3;
+        opacity: 0;
+    }
+    40% {
+        z-index: 3;
+        opacity: 1;
+  
+    }
+    60% {
+        z-index: 3;
+        opacity: 1;
+  
+    }
+    80% {
+        z-index: 3;
+        opacity: 1;
+    }
+    100% {
+        z-index: 0;
+        opacity: 0;
+    }
+  }
+
+/* .spinnerCont{
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    z-index: 2;
+    mat-spinner{
+        grid-column: 2;
+    }
+} */
+
 /* Animaciones */
 
 .animated {
-    -webkit-animation-duration: 500mss;
-    animation-duration: 500ms;
+    -webkit-animation-duration: 2000mss;
+    animation-duration: 2000ms;
     -webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
 }
@@ -206,16 +282,26 @@ button{
 }
 
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
     }
-    to {
+    25% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+
+    75%{
+        opacity: 0;
+    }
+
+    100%{
         opacity: 1;
     }
+
+
 }
-
-
-
 .fadeIn {
     animation-name: fadeIn;
 }
