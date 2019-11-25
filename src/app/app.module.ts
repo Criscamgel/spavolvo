@@ -9,7 +9,8 @@ import { FormStepComponent } from './components/form-step/form-step.component';
 import { CurrencyDirective } from './directives/currency.directive';
 import { ToNumberPipe } from './pipes/to-number.pipe';
 import { CustomMinDirective } from './directives/custom-min.directive';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http'
     FormStepComponent,
     CurrencyDirective,
     ToNumberPipe,
-    CustomMinDirective
+    CustomMinDirective,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

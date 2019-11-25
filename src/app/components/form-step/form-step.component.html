@@ -1,3 +1,11 @@
+<div class="titlesPpal row">
+    <div class="col-12 text-center titleOne">
+            ¡Financia aquí el carro de tus sueños!
+    </div>
+    <div class="col-12 text-center titleTwo">
+            Obten aquí una respuesta inmediata
+    </div>
+</div>
 <mat-horizontal-stepper linear>
         <mat-step label='' [stepControl]="formTc">            
 
@@ -6,6 +14,8 @@
                         <form #formTc="ngForm">
                                 <div class="row absolute">
                                 <div class="col-12 col-sm-12">
+                                    <div class="title">Cuéntanos de ti</div>
+                                    <hr>
                                 <mat-form-field class="full-width">
                                     <input 
                                     matInput 
@@ -99,8 +109,7 @@
                                         >                                       
                                         <small *ngIf="correoPersonal.touched && correoPersonal.errors?.required" class="error">Necesitamos saber tu correo electrónico</small>
                                         <small *ngIf="correoPersonal.touched && correoPersonal.errors?.pattern" class="error">Ingresa un correo electrónico válido</small>                                                            
-                                    </mat-form-field>
-                                    <hr>                                                                       
+                                    </mat-form-field>                                                                  
                                 </div>
                                     <div class="row">
                                         <div class="col-6 col-sm-6 col-md-6 col-lg-6">
@@ -108,13 +117,13 @@
                                         </div>
                                         
                                         <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                                        <p>
+                                        <p class="tycSmall">
                                                 PREMIER CREDIT o el TERCERO AUTORIZADO quedan autorizados para obtener información sobre mis relaciones comerciales con otras entidades y consultar mis reportes ante las centrales de información.
                                         </p>    
                                         </div>  
                                     </div>
 
-                                    <div class="col-12 col-sm-12 text-center">
+                                    <div class="checkTycOk col-12 col-sm-12 text-center">
                                         <mat-checkbox 
                                         required
                                         value="" 
@@ -136,10 +145,10 @@
                                 <!-- Modal TYC -->
                     <div class="containerModal" *ngIf="modal">
                             <div class="cntTitlem">
-                                <i id="iArrowLeftm" (click)="modal=false" class="fa fa-angle-left" aria-hidden="false"></i>
-                                <h3 class="titleModal">Términos y condiciones</h3>
+                                <i class="arrowLeft material-icons md-48" (click)="modal=false">keyboard_arrow_left</i>
+                                <p class="titleModal">Términos y condiciones</p>
                             </div>
-                              <hr>
+                              <hr class="hrModal">
                               <div class="btnTyc">
                                 <div class="squareModal">
                                       <p>Por medio de la presente manifiesto que he (hemos) leído y acepto (amos) los términos
@@ -163,9 +172,10 @@
 
         <mat-step label='' [stepControl]="formTct">
             <form #formTct="ngForm" (ngSubmit)="sendCentrales()">
-                <div class="row">
-
+                <div class="row absolute">
                     <div class="col-12 col-sm-12">
+                    <div class="title">Hablemos de tus ingresos</div>
+                    <hr>
                     <mat-form-field class="full-width">
                             <mat-label>Tipo de ocupación</mat-label>
                             <select 
@@ -198,7 +208,6 @@
                                     <small *ngIf="ingresoMensual.touched && ingresoMensual.errors?.required" class="error col-12">Inserta tus ingresos mensuales</small>       
                                     <small *ngIf="ingresoMensual.touched && ingresoMensual.errors?.customMin" class="error col-12">Ingresa un valor mayor</small>
                                 </mat-form-field>
-                            <hr>
                     </div> 
                     
                     
@@ -220,7 +229,6 @@
                                     <small *ngIf="valorFinanciar.touched && valorFinanciar.errors?.required" class="error error col-12">Inserta el valor a financiar</small>   
                                     <small *ngIf="valorFinanciar.touched && valorFinanciar.errors?.customMin" class="error error col-12">Ingresa un valor mayor</small>
                                 </mat-form-field>
-                            <hr>
                     </div>
 
                     <div class="col-12 col-sm-12">
@@ -230,7 +238,7 @@
                 </div> <!-- Row -->
             </form>          
         </mat-step><!-- Finaliza Paso 2 -->
-
+        
 <!-- Paso 3 --><mat-step label=''>
           <div class="row">
               <mat-spinner></mat-spinner>
@@ -254,8 +262,11 @@
                     Uno de nuestros asesores se comunicarán contigo para explorar alternativas 
                 </p>
                 <hr>
-              </div>
+              </div>               
           </div>
         </mat-step><!-- Finaliza Paso 3 -->
-      </mat-horizontal-stepper>
+    </mat-horizontal-stepper>     
+            
+            
+
       
