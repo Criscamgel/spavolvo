@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/scss/custom-theme.scss",
               "src/css/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
@@ -125,6 +126,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "tucarroform"
 }

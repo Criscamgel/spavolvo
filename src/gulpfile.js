@@ -10,10 +10,9 @@ function css(){
         cascade: false
     }))
     .pipe(sass({
-        outputStyle: 'compressed', //nested, compact, compressed
+        outputStyle: 'expanded', //nested, compact, compressed
     }))
     .pipe(gulp.dest('css'))
-
 }
 
 // Cada vez que hagas un cambio vas a ejecutar el paso de css a scss
