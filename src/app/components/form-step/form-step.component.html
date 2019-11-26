@@ -10,7 +10,7 @@
 
 
 <mat-horizontal-stepper linear>
-        <mat-step label='' [stepControl]="formTc" class="primerStep">            
+        <mat-step label='' [stepControl]="formTc" class="primerStep" [editable]="editable">            
 
                         <!-- Formulario -->
                         
@@ -19,6 +19,30 @@
                                 <div class="col-12 col-sm-12">
                                     <div class="title">Cuéntanos de ti</div>
                                     <hr>
+
+                                    <!-- Identificación Vendedor -->
+                                    <mat-form-field class="full-width">
+                                            <input 
+                                            matInput
+                                            type="tel"
+                                            name="IdentificacionVendedor"
+                                            [(ngModel)]="contacto.OtrosDatos.IdentificacionVendedor"
+                                            #identificacionVendedor="ngModel"
+                                            minlength="6"
+                                            maxlength="15"
+                                            placeholder="Identificación del vendedor"
+                                            (keypress)="oldNumbers($event)"
+                                            [(pattern)]="env.patternNumber"
+                                            required>
+                                            <div class="row">
+                                                <small class="col-12 error" *ngIf="identificacionVendedor.touched && identificacionVendedor.errors?.required">Necesitamos saber tu número de identificación</small>
+                                                <small class="col-12 error" *ngIf="identificacionVendedor.errors?.minlength">Mínimo {{identificacionVendedor.errors.minlength.requiredLength}} dígitos</small>
+                                                <small class="col-12 error" *ngIf="identificacionVendedor.errors?.pattern">Ingresa un número de identificación válido</small>
+                                            </div>                       
+                                    </mat-form-field>
+
+                                        <!-- Identificación Vendedor -->
+
                                 <mat-form-field class="full-width">
                                     <input 
                                     matInput 
@@ -175,7 +199,7 @@
 
         <!-- Paso 2 -->
 
-        <mat-step label='' [stepControl]="formTct">
+        <mat-step label='' [stepControl]="formTct" [editable]="editable" completed="false">
             <form #formTct="ngForm" (ngSubmit)="sendCentrales()">
                 <div class="row absolute dosStep">
                     <div class="col-12 col-sm-12">
@@ -246,33 +270,41 @@
             </form>          
         </mat-step><!-- Finaliza Paso 2 -->
         
-<!-- Paso 3 --><mat-step label=''>
+<!-- Paso 3 --><mat-step completed="false">
+
+        <div *ngIf="sppiner" class="col-12 spinnerCont">
+            <mat-spinner></mat-spinner>
+        </div> 
+
         <div class="row absolute tresStep">
                 <div class="text-center col-12 col-sm-12">                    
-                    <div class="col-12 container text-center">
-                      <!-- <div class="col-12 spinnerCont">
-                        <mat-spinner></mat-spinner>
-                     </div>   -->              
+                    <div *ngIf="aprobado" class="col-12 container text-center animated fadeIn">                                     
+                        <p class="title">¡listo!</p>
+                        <hr>  
+                        <img class="img-fluid" src="../../../assets/aprobado.png" alt="">
+                        <p class="aprobado">¡Tu solicitud es viable!</p>
+                        <p class="small">
+                        En menos de 24 horas uno de nuestros asesores se comunicará contigo para continuar tu solicitud de crédito 
+                        </p>
+                        <hr>                    
+                    </div>
+                
+                <!-- Negado -->
+                
+                <div *ngIf="negado" class="col-12 container text-center animated fadeIn">
                     <p class="title">¡listo!</p>
                     <hr>  
-                    <img class="img-fluid" src="../../../assets/aprobado.png" alt="">
-                    <p class="aprobado">¡Tu solicitud es viable!</p>
+                    <img class="img-fluid" src="../../../assets/negado.png" alt="">
+                    <p class="negado">¡Tu solicitud ha sido rechazada!</p>
                     <p class="small">
-                    En menos de 24 horas uno de nuestros asesores se comunicará contigo para continuar tu solicitud de crédito 
+                        Uno de nuestros asesores se comunicarán contigo para explorar alternativas 
                     </p>
                     <hr>
                 </div>
 
-              <!-- <div class="col-12 container text-center">
-                <p class="title">¡listo!</p>
-                <hr>  
-                <img class="img-fluid" src="../../../assets/negado.png" alt="">
-                <p class="negado">¡Tu solicitud ha sido rechazada!</p>
-                <p class="small">
-                    Uno de nuestros asesores se comunicarán contigo para explorar alternativas 
-                </p>
-                <hr>
-              </div>  -->              
+                <div class="col-12 col-sm-12 col-md-12 contButton">
+                    <button mat-button class="full-width siguiente" (click)="reload()">Finalizar</button>
+                </div>
           </div>
         </div>
         </mat-step><!-- Finaliza Paso 3 -->        

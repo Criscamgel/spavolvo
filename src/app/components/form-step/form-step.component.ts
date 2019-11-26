@@ -17,6 +17,11 @@ export class FormStepComponent{
   env = environment;
   modal:boolean = false;
   valorFinanciarCop:any;
+  editable:boolean = true;
+  aprobado:boolean = false;
+  negado:boolean = false;
+  sppiner:boolean = true;
+  
 
   min = this.env.min
   minF = this.env.minF
@@ -39,7 +44,8 @@ export class FormStepComponent{
     OtrosDatos: {  
       AutorizaConsultaCentrales: false,  
       AutorizaMareigua: false,  
-      ValorFinanciar: null  
+      ValorFinanciar: null,
+      IdentificacionVendedor: null  
     }
   }
 
@@ -66,7 +72,37 @@ export class FormStepComponent{
   }
 
   sendCentrales(this){
-    this.centrales.authenticate(this.contacto);    
+    this.editable = false;
+
+    this.centrales.authenticate(this.contacto);
+    setTimeout(() => {
+      this.centrales.response(this.contacto).subscribe((resp:any) => {
+        this.respuesta = resp.IdResultado;
+        console.log("this.respuesta -->", this.respuesta);
+        if(this.respuesta == 2 || this.respuesta == 3){
+          this.sppiner = false
+          this.aprobado = true
+        }else{
+          this.sppiner = false
+          this.negado = true
+        }
+      })  
+     }, 3000);
+    
+    if(this.contacto.DatosFinancieros.ActividadEconomica){
+      if(this.contacto.DatosFinancieros.ActividadEconomica === 1){
+          this.contacto.DatosFinancieros.ActividadEconomica = 1;
+          this.contacto.DatosFinancieros.ActividadIndependiente = 15;
+      }
+      if(this.contacto.DatosFinancieros.ActividadEconomica === 11){
+          this.contacto.DatosFinancieros.ActividadEconomica = 1;
+          this.contacto.DatosFinancieros.ActividadIndependiente = 16;
+      }
+      if(this.contacto.DatosFinancieros.ActividadEconomica === 2){
+          this.contacto.DatosFinancieros.ActividadEconomica = 2;
+          this.contacto.DatosFinancieros.ActividadIndependiente = 3;
+      }
+    } 
   }
 
   toNumber(val){
@@ -81,6 +117,11 @@ export class FormStepComponent{
     this.contacto.OtrosDatos.AutorizaConsultaCentrales=true;
     this.contacto.OtrosDatos.AutorizaMareigua=true;
    }
+
+   reload()
+    {
+    window.location.href="https://www.tucarro.com.co/"; 
+    }
 }
 
 export interface DatosBasicos {
@@ -105,6 +146,7 @@ export interface OtrosDatos {
   AutorizaConsultaCentrales?: Boolean;  
   AutorizaMareigua?: Boolean;  
   ValorFinanciar?: Number;
+  IdentificacionVendedor?: Number;
 }
 
 export interface ContactoInterface{

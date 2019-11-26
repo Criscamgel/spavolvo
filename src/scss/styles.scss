@@ -6,6 +6,10 @@ html{
     overflow-x: hidden;
 }
 
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+  }
+
 input:focus {
     outline:none !important;
 }
@@ -314,25 +318,26 @@ button{
 .splash{
     opacity: 0;
     display: grid;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
     background-color: $color-mercadolibre;
     z-index: 0;
     height: 100%;
     position: absolute;
     width: 100%;
+    top: 0;
     animation: slide 2s linear 1;
         .mercadoLogo{
             align-self: center;
             justify-self: center;
         }
         .santander{
-            grid-row: 2;
-            align-self: end;
+            grid-row: 3;
+            align-self: initial;
             justify-self: center;
         }
         .poBy{
-            grid-row: 3;
-            align-self: initial;
+            grid-row: 2;
+            align-self: end;
             justify-self: center;
         }
     
@@ -367,14 +372,18 @@ button{
     }
   }
 
-/* .spinnerCont{
-    grid-template-columns: 1fr 1fr 1fr;
+.spinnerCont{
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: absolute;
+    grid-template-rows: 1fr 1fr 1fr;
     z-index: 2;
+    background: #ffffff85;
     mat-spinner{
         grid-column: 2;
+        grid-row: 2;
     }
-} */
+}
 
 /* Animaciones */
 

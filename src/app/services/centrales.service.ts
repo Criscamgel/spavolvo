@@ -41,25 +41,15 @@ export class CentralesService {
             'Authorization': 'Bearer ' + this.token,
            }
 
-           this.optionsVi = { headers: this.headerVi } 
-
-           console.log("this.token", this.token);
-           setTimeout(() => {
-            this.response(contacto)  
-           }, 3000);
+           this.optionsVi = { headers: this.headerVi }      
                       
       })
   }
 
   response( contacto:any ){
       contacto = JSON.stringify(contacto)
-      console.log("contacto --> ", contacto);
-      console.log("this.optionsVi ---> ", this.optionsVi);
-      
-      return this.http.post(`${this.env.urlVt}`, contacto, this.optionsVi)
-      .subscribe((resp:any) => {
-            console.log("resp -->", resp);          
-        })    
+      console.log("Contacto", contacto);      
+      return this.http.post(`${this.env.urlVt}`, contacto, this.optionsVi)         
   }
 
 }

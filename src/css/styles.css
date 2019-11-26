@@ -4,6 +4,10 @@ html {
   overflow-x: hidden;
 }
 
+::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}
+
 input:focus {
   outline: none !important;
 }
@@ -352,12 +356,13 @@ button {
 .splash {
   opacity: 0;
   display: grid;
-  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
   background-color: #fff02a;
   z-index: 0;
   height: 100%;
   position: absolute;
   width: 100%;
+  top: 0;
   -webkit-animation: slide 2s linear 1;
   animation: slide 2s linear 1;
 }
@@ -368,14 +373,14 @@ button {
 }
 
 .splash .santander {
-  grid-row: 2;
-  align-self: end;
+  grid-row: 3;
+  align-self: initial;
   justify-self: center;
 }
 
 .splash .poBy {
-  grid-row: 3;
-  align-self: initial;
+  grid-row: 2;
+  align-self: end;
   justify-self: center;
 }
 
@@ -433,14 +438,20 @@ button {
   }
 }
 
-/* .spinnerCont{
-    grid-template-columns: 1fr 1fr 1fr;
-    display: grid;
-    z-index: 2;
-    mat-spinner{
-        grid-column: 2;
-    }
-} */
+.spinnerCont {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: absolute;
+  grid-template-rows: 1fr 1fr 1fr;
+  z-index: 2;
+  background: #ffffff85;
+}
+
+.spinnerCont mat-spinner {
+  grid-column: 2;
+  grid-row: 2;
+}
+
 /* Animaciones */
 .animated {
   -webkit-animation-duration: 2000mss;
