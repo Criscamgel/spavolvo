@@ -1,14 +1,37 @@
 /* Imports mixins */
+/* Responsive */
 html {
   overflow-x: hidden;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+input#defaultCheck1-input:focus {
+  outline: none !important;
 }
 
 .row {
   position: inherit !important;
 }
 
+.mat-horizontal-stepper-header {
+  padding: 0px !important;
+}
+
 body {
   background-color: #F4F4F4 !important;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: url(../assets/fondo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 }
 
 .titlesPpal .titleOne {
@@ -25,10 +48,12 @@ body {
   margin: 0px 0px 5px 0px;
 }
 
-/* Principal Step */
-/* app-form-step{
-    margin-top:50px;
-} */
+@media only screen and (min-width: 1024px) {
+  .titlesPpal .titleOne, .titlesPpal .titleTwo {
+    font-size: 16px;
+  }
+}
+
 .ng-invalid.ng-touched:not(form), .ng-invalid.ng-valid:not(form) {
   color: #fd0019;
 }
@@ -45,9 +70,34 @@ button:focus {
   width: 100%;
 }
 
+.contButton button.anterior {
+  display: none;
+  color: #2A9FD8;
+  background-color: #fff;
+  border: 1px solid #2A9FD8;
+}
+
+@media only screen and (min-width: 768px) {
+  .contButton {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .contButton button.anterior {
+    display: block;
+    grid-column: 1;
+  }
+  .contButton button.siguiente {
+    display: block;
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
 .mat-button {
   background: #2A9FD8;
   color: #fff;
+  height: 50px;
 }
 
 .mat-button:disabled {
@@ -75,14 +125,45 @@ button:focus {
   top: 11rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .containerModal {
+    width: 75%;
+    top: 14rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .containerModal {
+    width: 53%;
+  }
+}
+
 .containerModal .squareModal {
   z-index: 1;
   background-color: #fff;
   overflow: auto;
-  height: 31rem;
+  height: 36rem;
   font-size: 12px;
   padding: 0px 18px 0px 18px;
   text-align: justify;
+}
+
+@media only screen and (min-width: 768px) {
+  .containerModal .squareModal {
+    height: 28rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .containerModal .squareModal {
+    height: 28rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .santanderGray {
+    display: none;
+  }
 }
 
 .cnt-button {
@@ -118,6 +199,13 @@ button:focus {
   padding-top: 15px;
 }
 
+@media only screen and (min-width: 1024px) {
+  .tycSmall {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
 hr {
   border: 1px solid #C2C2C2 !important;
 }
@@ -132,6 +220,12 @@ button {
 
 .titlesPpal.row {
   margin-top: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  .titlesPpal.row {
+    margin-top: 80px;
+  }
 }
 
 .hrModal {
@@ -168,10 +262,36 @@ button {
   height: 50px;
 }
 
-.encMercadolibre img {
+.encMercadolibre img.mercadolibreM {
   width: 60%;
   align-self: center;
   justify-self: right;
+}
+
+.encMercadolibre img.mercadolibreT {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .encMercadolibre {
+    height: 80px;
+  }
+  .encMercadolibre img.mercadolibreM {
+    display: none;
+  }
+  .encMercadolibre img.mercadolibreT {
+    display: block;
+    align-self: center;
+    justify-self: right;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .logPremier {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .row.principal.grid {
@@ -180,8 +300,31 @@ button {
   display: block;
 }
 
+@media only screen and (min-width: 1024px) {
+  .row.principal.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .row.principal.grid app-form-step {
+    grid-column: 1;
+  }
+}
+
 .mat-stepper-horizontal, .mat-stepper-vertical {
   background-color: transparent;
+}
+
+@media only screen and (min-width: 768px) {
+  .mat-stepper-horizontal, .mat-stepper-vertical {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .mat-stepper-horizontal, .mat-stepper-vertical {
+    width: 85%;
+  }
 }
 
 .pie img {
@@ -193,6 +336,19 @@ button {
   line-height: 1.6;
 }
 
+@media only screen and (min-width: 768px) {
+  .pie p.small {
+    color: #fff;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .pie p.small {
+    top: -14px;
+    position: relative;
+  }
+}
+
 .splash {
   opacity: 0;
   display: grid;
@@ -202,7 +358,6 @@ button {
   height: 100%;
   position: absolute;
   width: 100%;
-  top: 0px;
   -webkit-animation: slide 2s linear 1;
   animation: slide 2s linear 1;
 }

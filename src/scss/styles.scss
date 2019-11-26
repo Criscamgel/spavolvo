@@ -1,16 +1,36 @@
 /* Imports mixins */
 @import 'variables';
+@import 'mixins';
 
 html{
     overflow-x: hidden;
+}
+
+input:focus {
+    outline:none !important;
+}
+
+input#defaultCheck1-input:focus {
+    outline:none !important;  
 }
 
 .row{
     position: inherit !important;
 }
 
+.mat-horizontal-stepper-header{
+    padding: 0px !important;
+}
+
 body{
     background-color: $color-fondo !important;
+    @include tablet() {
+        background-image: url(../assets/fondo.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover; 
+    }    
 }
 
 .titlesPpal{
@@ -26,13 +46,12 @@ body{
         font-size: 14px;
         margin: 0px 0px 5px 0px;
     }
+    @include deskopt(){
+        .titleOne, .titleTwo{
+            font-size: 16px;
+        }
+    }
 }
-
-/* Principal Step */
-
-/* app-form-step{
-    margin-top:50px;
-} */
 
 .ng-invalid.ng-touched:not(form), .ng-invalid.ng-valid:not(form){
     color: $color-error;
@@ -50,12 +69,39 @@ button:focus {
     width: 100%;
 }
 
+.contButton{
+    button.anterior{
+        display: none;
+        color: $color-btn-activo;
+        background-color: $color-white;
+        border: 1px solid $color-btn-activo;
+        }
+    
+@include tablet(){    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    button.anterior{
+            display: block;
+            grid-column: 1;
+        }
+    button.siguiente{
+            display: block;
+            grid-column: 3;
+            grid-row: 1;
+          }
+    }        
+}
+
+
+
 .mat-button{
     background: $color-btn-activo;
     color: $color-white;
+    height: 50px;
     &:disabled{
         background: $color-btn-disabled;
-    }
+    }    
 }
 
 .cdk-focused{
@@ -78,14 +124,33 @@ button:focus {
     background-color: $color-white;
     margin: 2px 21px 0px 22px;
     top: 11rem;
+    @include tablet(){
+        width: 75%;
+        top: 14rem;
+    }
+    @include deskopt(){
+        width: 53%;
+    }    
     .squareModal{
         z-index: 1;
         background-color: $color-white;
         overflow: auto;
-        height: 31rem;
+        height: 36rem;
         font-size: 12px;
         padding: 0px 18px 0px 18px;
         text-align: justify;
+        @include tablet(){
+            height: 28rem;            
+        }
+        @include deskopt(){
+            height: 28rem;
+        }
+    }
+}
+
+.santanderGray{
+    @include tablet(){
+        display: none;
     }
 }
 
@@ -121,6 +186,10 @@ button:focus {
     font-size: 11px;
     color: $color-btn-disabled;
     padding-top: 15px;
+    @include deskopt(){
+        font-size: 14px;
+        padding: 5px;
+    }
 }
 
 hr{
@@ -136,6 +205,9 @@ button{
 }
 .titlesPpal.row {
     margin-top: 50px;
+    @include tablet(){
+        margin-top: 80px;
+    }
 }
 
 .hrModal{
@@ -168,21 +240,57 @@ button{
     z-index: 1;
     top: 0;
     height: 50px;
-    img{
+    img.mercadolibreM{
         width: 60%;
         align-self: center;
         justify-self: right;
+    }
+    img.mercadolibreT{
+        display: none;
+    }
+    @include tablet(){
+        height: 80px;
+        img.mercadolibreM{
+            display: none;
+        }
+        img.mercadolibreT{
+            display: block;
+            align-self: center;
+            justify-self: right;
+        }
+    }
+}
+
+.logPremier{
+    @include tablet(){
+        width: 80%;
+        margin: 0 auto;
+        display: block;
     }
 }
 
 .row.principal.grid{
     background-color: $color-transparent;
     margin: 0px !important;
-    display: block;  
+    display: block;
+    @include deskopt(){
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        app-form-step{
+            grid-column: 1;
+        }
+    }  
 }
 
 .mat-stepper-horizontal, .mat-stepper-vertical {
     background-color: transparent;
+    @include tablet(){
+        width: 80%;
+        margin: 0 auto;
+    }
+    @include deskopt(){
+        width: 85%;
+    }
 }
 
 .pie{
@@ -192,8 +300,16 @@ button{
     p.small{
         font-size: 10px;
         line-height: 1.6;
+        @include tablet(){
+            color: $color-white;
+        }
+        @include deskopt(){
+            top: -14px;
+            position: relative;
+        }
     }
 }
+
 
 .splash{
     opacity: 0;
