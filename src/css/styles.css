@@ -38,6 +38,18 @@ body {
   }
 }
 
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 1.25em;
+  margin: 10px 0px;
+  font-size: 1em;
+}
+
+@media only screen and (min-width: 1366px) {
+  .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    margin: 10px 10px;
+  }
+}
+
 .titlesPpal .titleOne {
   color: #808080;
   margin: 10px 0px;
@@ -52,7 +64,7 @@ body {
   margin: 0px 0px 5px 0px;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1366px) {
   .titlesPpal .titleOne, .titlesPpal .titleTwo {
     font-size: 16px;
   }
@@ -108,12 +120,6 @@ button:focus {
   background: #C2C2C2;
 }
 
-.cdk-focused {
-  background: #fff;
-  color: #2A9FD8;
-  border: 1px solid #2A9FD8;
-}
-
 /* Modal */
 .absolute {
   z-index: 0;
@@ -136,9 +142,15 @@ button:focus {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1366px) {
   .containerModal {
     width: 53%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .containerModal {
+    width: 54.5%;
   }
 }
 
@@ -146,21 +158,49 @@ button:focus {
   z-index: 1;
   background-color: #fff;
   overflow: auto;
-  height: 36rem;
+  height: 38rem;
   font-size: 12px;
   padding: 0px 18px 0px 18px;
   text-align: justify;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 320px) {
   .containerModal .squareModal {
-    height: 28rem;
+    height: 48rem;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 375px) {
   .containerModal .squareModal {
-    height: 28rem;
+    height: 43rem;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .containerModal .squareModal {
+    height: 41rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .containerModal .squareModal {
+    height: 31rem;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .containerModal .squareModal {
+    height: 32rem;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .containerModal .squareModal {
+    margin: 0px 0px 0px 36px;
+    height: 30rem;
+  }
+  .containerModal .squareModal .contButton {
+    margin: 20px 0px 15px 10px;
   }
 }
 
@@ -203,7 +243,7 @@ button:focus {
   padding-top: 15px;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1366px) {
   .tycSmall {
     font-size: 14px;
     padding: 5px;
@@ -211,7 +251,7 @@ button:focus {
 }
 
 hr {
-  border: 1px solid #C2C2C2 !important;
+  border: 1px dotted #C2C2C2 !important;
 }
 
 .checkTycOk {
@@ -290,11 +330,37 @@ button {
   }
 }
 
+.logSantander {
+  width: 80%;
+  padding: 10px;
+  display: block;
+  margin: 0px 0px 0px 20px;
+}
+
 @media only screen and (min-width: 768px) {
-  .logPremier {
-    width: 80%;
-    margin: 0 auto;
+  .logSantander {
     display: block;
+    width: 80%;
+    padding: 5px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .logSantander {
+    width: 70%;
+    display: block;
+    padding: 5px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .logSantander {
+    width: 50%;
+    display: block;
+    padding: 5px;
+    margin: 0 auto;
   }
 }
 
@@ -304,7 +370,7 @@ button {
   display: block;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1366px) {
   .row.principal.grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -325,7 +391,7 @@ button {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1366px) {
   .mat-stepper-horizontal, .mat-stepper-vertical {
     width: 85%;
   }
@@ -346,7 +412,7 @@ button {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1366px) {
   .pie p.small {
     top: -14px;
     position: relative;
@@ -382,6 +448,18 @@ button {
   grid-row: 2;
   align-self: end;
   justify-self: center;
+}
+
+.mat-step-header:hover {
+  background-color: transparent;
+}
+
+.mat-step-header:hover:focus {
+  outline: none !important;
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
 }
 
 @-webkit-keyframes slide {
@@ -450,6 +528,8 @@ button {
 .spinnerCont mat-spinner {
   grid-column: 2;
   grid-row: 2;
+  align-self: center;
+  justify-self: center;
 }
 
 /* Animaciones */

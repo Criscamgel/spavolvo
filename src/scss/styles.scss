@@ -37,6 +37,15 @@ body{
     }    
 }
 
+.mat-form-field-appearance-legacy .mat-form-field-wrapper{
+    padding-bottom: 1.25em;
+    margin: 10px 0px;
+    font-size: 1em;
+    @include deskopt(){
+        margin: 10px 10px;
+    }
+}
+
 .titlesPpal{
     .titleOne{
         color: #808080;
@@ -108,12 +117,6 @@ button:focus {
     }    
 }
 
-.cdk-focused{
-    background: $color-white;
-    color: $color-btn-activo;
-    border: 1px solid $color-btn-activo;    
-}
-
 /* Modal */
 
 .absolute {
@@ -134,20 +137,39 @@ button:focus {
     }
     @include deskopt(){
         width: 53%;
+    }
+    @include bigScreen(){
+        width: 54.5%;
     }    
     .squareModal{
         z-index: 1;
         background-color: $color-white;
         overflow: auto;
-        height: 36rem;
+        height: 38rem;
         font-size: 12px;
         padding: 0px 18px 0px 18px;
         text-align: justify;
+        @include sSmall(){
+            height: 48rem;
+        }
+        @include mSmall(){
+            height: 43rem;
+        }
+        @include lSmall(){
+            height: 41rem;
+        }
         @include tablet(){
-            height: 28rem;            
+            height: 31rem;            
         }
         @include deskopt(){
-            height: 28rem;
+            height: 32rem;
+        }
+        @include bigScreen(){
+            margin: 0px 0px 0px 36px;
+            height: 30rem;
+            .contButton{
+                margin: 20px 0px 15px 10px;
+            }
         }
     }
 }
@@ -197,7 +219,7 @@ button:focus {
 }
 
 hr{
-    border: 1px solid $color-btn-disabled !important;
+    border: 1px dotted $color-btn-disabled !important;
 }
 
 .checkTycOk{
@@ -265,11 +287,28 @@ button{
     }
 }
 
-.logPremier{
+.logSantander{
+    width: 80%;
+    padding: 10px;
+    display: block;
+    margin: 0px 0px 0px 20px;
     @include tablet(){
-        width: 80%;
-        margin: 0 auto;
-        display: block;
+            display: block;
+            width: 80%;
+            padding: 5px;
+            margin: 0 auto;        
+    }
+    @include deskopt(){
+            width: 70%;
+            display: block;
+            padding: 5px;
+            margin: 0 auto;
+    }
+    @include bigScreen(){
+            width: 50%;
+            display: block;
+            padding: 5px;
+            margin: 0 auto;
     }
 }
 
@@ -343,6 +382,17 @@ button{
     
 }
 
+.mat-step-header:hover{
+    background-color: transparent;
+    &:focus{
+        outline: none !important;
+    }
+}
+
+[tabindex="-1"]:focus {
+    outline: none !important;
+}
+
 @keyframes slide {
     0% {
         z-index: 3;
@@ -382,6 +432,8 @@ button{
     mat-spinner{
         grid-column: 2;
         grid-row: 2;
+        align-self: center;
+        justify-self: center;
     }
 }
 

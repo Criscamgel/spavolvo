@@ -73,20 +73,6 @@ export class FormStepComponent{
 
   sendCentrales(this){
     this.editable = false;
-
-    this.centrales.authenticate(this.contacto);
-    setTimeout(() => {
-      this.centrales.response(this.contacto).subscribe((resp:any) => {
-        this.respuesta = resp.IdResultado;
-        if(this.respuesta == 2 || this.respuesta == 3){
-          this.sppiner = false
-          this.aprobado = true
-        }else{
-          this.sppiner = false
-          this.negado = true
-        }
-      })  
-     }, 3000);
     
     if(this.contacto.DatosFinancieros.ActividadEconomica){
       if(this.contacto.DatosFinancieros.ActividadEconomica === 1){
@@ -101,7 +87,23 @@ export class FormStepComponent{
           this.contacto.DatosFinancieros.ActividadEconomica = 2;
           this.contacto.DatosFinancieros.ActividadIndependiente = 3;
       }
-    } 
+    }
+
+    this.centrales.authenticate(this.contacto);
+    setTimeout(() => {
+      this.centrales.response(this.contacto).subscribe((resp:any) => {
+        this.respuesta = resp.IdResultado;
+        
+        if(this.respuesta == 2 || this.respuesta == 3){
+          this.sppiner = false
+          this.aprobado = true
+        }else{
+          this.sppiner = false
+          this.negado = true
+        }
+      })  
+     }, 3000);
+    
   }
 
   toNumber(val){
