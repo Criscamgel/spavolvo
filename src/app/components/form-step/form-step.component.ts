@@ -78,7 +78,6 @@ export class FormStepComponent{
     setTimeout(() => {
       this.centrales.response(this.contacto).subscribe((resp:any) => {
         this.respuesta = resp.IdResultado;
-        console.log("this.respuesta -->", this.respuesta);
         if(this.respuesta == 2 || this.respuesta == 3){
           this.sppiner = false
           this.aprobado = true

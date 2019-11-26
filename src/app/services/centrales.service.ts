@@ -47,8 +47,7 @@ export class CentralesService {
   }
 
   response( contacto:any ){
-      contacto = JSON.stringify(contacto)
-      console.log("Contacto", contacto);      
+      contacto = JSON.stringify(contacto)      
       return this.http.post(`${this.env.urlVt}`, contacto, this.optionsVi)         
   }
 
