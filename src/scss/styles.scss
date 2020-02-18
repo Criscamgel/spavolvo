@@ -94,7 +94,7 @@ body{
 
 .titlesPpal{        
     .titleOne{
-        color: #808080;
+        color: #000000;
         margin: 10px 0px;
         font-size: 14px;
         margin: 20px 0px;
@@ -324,7 +324,7 @@ button{
     .logos{
         display: grid;
         grid-column: 2;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     img.mercadolibreM{
         width: 60%;
@@ -338,7 +338,7 @@ button{
         width: 60%;
         grid-column: 2;
         align-self: center;
-        justify-self: center;
+        justify-self: left;
         @include tablet(){
             width: 35%;
         }
@@ -391,9 +391,9 @@ button{
     display: block;
     @include deskopt(){
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 0.3fr 2fr 0.3fr;
         app-form-step{
-            grid-column: 1;
+            grid-column: 2;
         }
     }  
 }
