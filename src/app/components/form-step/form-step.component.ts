@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { CentralesService } from '../../services/centrales.service';
 
@@ -16,11 +16,21 @@ export class FormStepComponent{
   mail = RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
   env = environment;
   modal:boolean = false;
-  valorFinanciarCop:any;
+  valorFinanciarCop:any = 0;
   editable:boolean = true;
   aprobado:boolean = false;
   negado:boolean = false;
   sppiner:boolean = true;
+
+  // Variable ver detalles
+  verDetalle:boolean = false;
+
+  // Variables Calculadora
+  valorCuota:number = 0;
+  cuotas:number = 0;
+  tasa:number = 0.24;
+  seguroTotal:number = 0;
+  seguroCuota:number = 0;
   
 
   min = this.env.min
@@ -103,15 +113,11 @@ export class FormStepComponent{
         }
       })  
      }, 3000);
+
+     console.log(this.contacto);
+     
     
   }
-
-  toNumber(val){
-    let valArr=val.split('');
-    let valFiltered = valArr.filter(x=> !isNaN(x))
-    let valProcessed = valFiltered.join('')     
-    return Number(valProcessed);
-   }
 
    checkTyc(this){
     this.modal=false; 
@@ -123,6 +129,112 @@ export class FormStepComponent{
     {
     window.location.href="https://www.tucarro.com.co/"; 
     }
+
+    verDetalles(){
+      this.verDetalle = !this.verDetalle;    
+    }
+
+    /* Calculadora */
+
+changeButtonCliente(val) {
+
+  let nmv = Math.pow((1 + this.tasa), (1 / 12)) - 1;
+  this.seguroCuota = (1200 / 1000000) * this.valorFinanciarCop;
+  this.contacto.OtrosDatos.ValorFinanciar = this.valorFinanciarCop; 
+  let cuota;
+  
+  if (val !== undefined) {
+
+    if (val.value !== undefined) {
+      cuota = Number(val.value);
+    } else {
+      cuota = Number(val);
+    }
+
+  }
+
+  switch (cuota) {
+    case 6:
+
+      this.seguroTotal = Math.round(this.seguroCuota * cuota);
+      var vlrActual = Math.round(this.valorFinanciarCop);
+      var vlrPartuno = vlrActual * nmv;
+      var vlrPartdos = Math.pow((1 + nmv), - cuota)
+      vlrPartdos = 1 - vlrPartdos;
+      this.valorCuota = Math.round(vlrPartuno / vlrPartdos);      
+
+      break;
+
+    case 12:
+
+        this.seguroTotal  = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+
+      break;
+
+    case 18:
+
+        this.seguroTotal = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+
+      break;
+
+    case 24:
+
+        this.seguroTotal  = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+      
+      break;
+
+    case 36:
+
+        this.seguroTotal  = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+
+      break;
+
+      case 48:
+        
+        this.seguroTotal  = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+
+      break;
+
+      case 60:
+
+        this.seguroTotal = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+
+      break;
+
+    default:
+      break;
+  }
+}
 }
 
 export interface DatosBasicos {

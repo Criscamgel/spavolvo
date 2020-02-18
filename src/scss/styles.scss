@@ -6,6 +6,52 @@ html{
     overflow-x: hidden;
 }
 
+.mat-horizontal-stepper-header {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);       
+
+    .mat-step-icon{
+        align-self: center;
+        justify-self: center;
+        /* grid-row: 2; */
+    }
+
+    .mat-step-label{
+        grid-row: 1;
+    }    
+}
+
+.mat-horizontal-stepper-header-container{
+    
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    background-color: none;
+    box-shadow: none;
+
+    @include tablet() {       
+
+        border-radius: 10px;
+        padding: 15px;
+        margin: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.4);
+    }    
+}
+
+.mat-stepper-horizontal-line{
+    margin: 0 -50px !important;
+    border-top-width: 2px !important;
+    @include tablet(){
+        margin: 0 -65px !important;
+    }
+}
+
+.subTitulo{
+    margin-top: 20px;
+}
+
 ::ng-deep .mat-horizontal-stepper-header{
     pointer-events: none !important;
   }
@@ -46,18 +92,26 @@ body{
     }
 }
 
-.titlesPpal{
+.titlesPpal{        
     .titleOne{
         color: #808080;
         margin: 10px 0px;
         font-size: 14px;
-        margin: 10px 0px 0px 0px;
+        margin: 20px 0px;
+        display: none;
+        @include tablet(){
+            display: block;
+        }
     }
     .titleTwo{
         color: #DBDBDB;
         text-align: center;
         font-size: 14px;
         margin: 0px 0px 5px 0px;
+        display: none;
+        @include tablet(){
+            display: block;
+        }
     }
     @include deskopt(){
         .titleOne, .titleTwo{
@@ -130,7 +184,7 @@ button:focus {
     position: absolute;
     background-color: $color-white;
     margin: 2px 21px 0px 22px;
-    top: 11rem;
+    top: 10rem;
     @include tablet(){
         width: 75%;
         top: 14rem;
@@ -150,13 +204,13 @@ button:focus {
         padding: 0px 18px 0px 18px;
         text-align: justify;
         @include sSmall(){
-            height: 48rem;
+            height: 54rem;
         }
         @include mSmall(){
-            height: 43rem;
+            height: 52rem;
         }
         @include lSmall(){
-            height: 41rem;
+            height: 51rem;
         }
         @include tablet(){
             height: 31rem;            
@@ -219,7 +273,8 @@ button:focus {
 }
 
 hr{
-    border: 1px dotted $color-btn-disabled !important;
+    border: 1px solid $gris-tenue !important;
+    margin: 20px 0px !important;
 }
 
 .checkTycOk{
@@ -260,16 +315,33 @@ button{
 .encMercadolibre{
     background-color: $color-mercadolibre;
     display: grid;
-    grid-template-columns: 0.3fr 1fr 0.3fr;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
     position: fixed !important;
     width: 100%;
     z-index: 1;
     top: 0;
     height: 50px;
+    .logos{
+        display: grid;
+        grid-column: 2;
+        grid-template-columns: repeat(2, 1fr);
+    }
     img.mercadolibreM{
         width: 60%;
+        grid-column: 1;
         align-self: center;
-        justify-self: right;
+        justify-self: center;
+
+    }
+
+    img.santanderWt{
+        width: 60%;
+        grid-column: 2;
+        align-self: center;
+        justify-self: center;
+        @include tablet(){
+            width: 35%;
+        }
     }
     img.mercadolibreT{
         display: none;
@@ -281,8 +353,9 @@ button{
         }
         img.mercadolibreT{
             display: block;
+            grid-column: 1;
             align-self: center;
-            justify-self: right;
+            justify-self: center;
         }
     }
 }
@@ -378,6 +451,7 @@ button{
             grid-row: 2;
             align-self: end;
             justify-self: center;
+            color: $gris-tenue;
         }
     
 }
@@ -477,3 +551,196 @@ button{
 .fadeIn {
     animation-name: fadeIn;
 }
+
+
+/* Radio Buttons Group */
+
+.contPeriodo {
+    display: grid;    
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    margin: 10px 10px;
+  
+    @include tablet(){
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    }
+  
+    /* span {
+      grid-row: 1;
+    } */
+  }
+  
+  /* Radio Buttons */
+  
+  /* style your lables/button */
+  input[type="radio"] + div {
+    /* keep pointer so that you get the little hand showing when you are on a button */
+    cursor: pointer;
+    /* the following are the styles */
+    border-radius: 3px;
+    padding: 5px 5px;
+    background-color: $color-white;
+    border: 1px solid $grisOscuro !important;
+    width: 95%;
+    height: 50px;
+    border: none;
+  
+    /* @include tabletLaptop() {
+      border-radius: 15px;
+    }
+  
+    @include laptopDesktop() {
+      border-radius: 15px;
+    }
+  
+    @include desktopFull() {
+      border-radius: 15px;
+    } */
+  }
+  
+  .radio {
+    input[type="radio"]:checked + div {
+      /* style for the checked/selected state */
+      border-radius: 5px;
+      box-shadow: 0px 1px 7px 0px $color-btn-disabled;
+      background-color: white;
+      border: none;
+  
+      /* @include laptopDesktop() {
+        border-radius: 15px;
+      }
+  
+      @include desktopFull() {
+        border-radius: 15px;
+      } */
+    }
+  }
+  
+  /* Radio Button */
+  
+  .radio {
+    display: grid;
+    grid-template-columns: auto;
+  
+    input {
+      opacity: 0;
+      grid-column: 1;
+      grid-row: 1;
+      align-self: center;
+      justify-self: center;
+      z-index: 1;
+      width: 95%;
+      height: 100%;
+  
+      /* @include laptopDesktop() {
+        min-height: 150px;
+      }
+      @include desktopFull() {
+        min-height: 150px;
+      } */
+    }
+  
+    div {
+      grid-column: 1;
+      grid-row: 1;
+      display: grid;
+      grid-auto-rows: 1fr;
+      align-self: center;
+      justify-self: center;
+
+      .mes {
+        grid-row: 1;
+        font-size: 12px;
+        color: $grissOscuro;
+        align-self: center;
+        text-align: center;
+  
+        /* @include tabletLaptop() {
+          font-size: 18px;
+          font-weight: 600;
+        }
+  
+        @include laptopDesktop() {
+          font-size: 18px;
+          font-weight: 600;
+        }
+  
+        @include desktopFull() {
+          font-size: 18px;
+          font-weight: 600;
+        } */
+      }
+    }
+  }
+
+  .cntTitle{
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      div.title{
+        align-self: center;
+        justify-self: center;
+        }
+      small{
+        display: none;
+        }
+
+      @include tablet(){
+        grid-template-columns: repeat(2, 1fr);        
+        small{
+            display: block;
+            align-self: center;
+            justify-self: right;
+            padding: 20px 10px;
+        }
+        div.title{
+            justify-self: left;
+            padding: 20px 10px;
+        }
+      }
+  }
+
+  mat-icon{
+    cursor: pointer;
+  }
+
+  .contDetalles{
+    border: 1px solid $gris-tenue;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  small.infoRequerida{    
+      display: block;
+    @include tablet(){
+        display: none;
+    }
+  }
+
+  .mat-horizontal-stepper-header .mat-step-icon {
+      margin-right: 0px;
+      @include tablet(){
+        margin-right: 20px;
+      }
+  }
+
+  .mat-step-label{
+      font-size: 10px;      
+    @include tablet(){
+        font-size: 14px;
+      } 
+  }
+
+  .mat-horizontal-stepper-header-container{
+      margin-top: 20px;
+  }
+
+  .pointer{
+    cursor: pointer;
+  }
+
+
