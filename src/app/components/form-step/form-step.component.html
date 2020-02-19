@@ -14,7 +14,7 @@
                                         <div class="col-12 col-sm-12">
                                             <div class="cntTitle">
                                                 <div class="title">Calcula tu cuota</div>
-                                                <small>*Información requerida</small>
+                                                <small><b class="obligatorio">*</b>Información requerida</small>
                                             </div>
                                         <hr>
 
@@ -39,7 +39,7 @@
                                         </div>
 
                                         <div class="col-12 col-sm-12 subTitulo">
-                                            <small>¿A cuántos meses quieres pagar?*</small>
+                                            <small>¿A cuántos meses quieres pagar?<b class="obligatorio">*</b></small>
                                         </div>
 
 
@@ -105,7 +105,7 @@
                                             </div>
 
                                             <div class="col-12 col-sm-12 subTitulo">
-                                                    <small>Este será el valor de la cuota mensual*</small>
+                                                    <small>Este será el valor de la cuota mensual<b class="obligatorio">*</b></small>
                                             </div>
 
                                             <div class="col-12 col-sm-12">
@@ -132,13 +132,13 @@
                                             </div>
                                             
                                             <div class="col-12 col-sm-12">
-                                                    <small>*Este valor corresponde al total sin seguros</small><br>
-                                                    <small class="infoRequerida">*Información requerida</small>
+                                                    <small><b class="obligatorio">*</b>Este valor corresponde al total sin seguros</small><br>
+                                                    <small class="infoRequerida"><b class="obligatorio">*</b>Información requerida</small>
                                                     <hr>
                                             </div>                    
                                         
                                         <div class="col-12 col-sm-12 col-md-12 contButton">
-                                                <button mat-button class="full-width siguiente" [disabled]="formPs.invalid || valorCuota === 0" matStepperNext>Continuar</button>
+                                                <button mat-button class="full-width siguiente" [disabled]="formPs.invalid || valorCuota === 0" matStepperNext>CONTINUAR</button>
                                         </div>
                                         
                                     </div> <!-- Row -->
@@ -340,7 +340,7 @@
 
                         <div class="col-12 col-sm-12 col-md-12 contButton">
                                 <button mat-button id="stepOne" [disabled]="formTc.invalid" class="full-width siguiente" (ngSubmit)="sendCentrales()" matStepperNext>Solicitar</button>
-                                <button class="col-12 full-width anterior" matStepperPrevious mat-button>Anterior</button>
+                                <!-- <button class="col-12 full-width anterior" matStepperPrevious mat-button>Anterior</button> -->
                         </div>
                     </div> <!-- Row -->
                 </form> 
@@ -411,7 +411,7 @@
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-12 contButton">
-                    <button mat-button class="full-width siguiente" id="stepTwo" (click)="reload()">Finalizar</button>
+                    <button mat-button class="full-width siguiente" id="stepTwo" (click)="reload()">VOLVER A CARROYA</button>
                 </div>
           </div>
         </div>

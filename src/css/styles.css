@@ -200,20 +200,20 @@ button:focus {
 
 @media only screen and (min-width: 768px) {
   .containerModal {
-    width: 75%;
-    top: 14rem;
+    width: 76%;
+    top: 18rem;
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .containerModal {
-    width: 53%;
+    width: 62%;
   }
 }
 
 @media only screen and (min-width: 1920px) {
   .containerModal {
-    width: 54.5%;
+    width: 62.5%;
   }
 }
 
@@ -247,20 +247,20 @@ button:focus {
 
 @media only screen and (min-width: 768px) {
   .containerModal .squareModal {
-    height: 31rem;
+    height: 44rem;
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .containerModal .squareModal {
-    height: 32rem;
+    height: 43rem;
   }
 }
 
 @media only screen and (min-width: 1920px) {
   .containerModal .squareModal {
     margin: 0px 0px 0px 36px;
-    height: 30rem;
+    height: 43rem;
   }
   .containerModal .squareModal .contButton {
     margin: 20px 0px 15px 10px;
@@ -373,7 +373,13 @@ button {
 .encMercadolibre .logos {
   display: grid;
   grid-column: 2;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media only screen and (min-width: 768px) {
+  .encMercadolibre .logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .encMercadolibre img.mercadolibreM {
@@ -384,7 +390,7 @@ button {
 }
 
 .encMercadolibre img.santanderWt {
-  width: 60%;
+  width: 50%;
   grid-column: 2;
   align-self: center;
   justify-self: left;
@@ -392,7 +398,22 @@ button {
 
 @media only screen and (min-width: 768px) {
   .encMercadolibre img.santanderWt {
+    width: 50%;
+    justify-self: left;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .encMercadolibre img.santanderWt {
+    width: 40%;
+    justify-self: left;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .encMercadolibre img.santanderWt {
     width: 35%;
+    justify-self: left;
   }
 }
 
@@ -867,4 +888,8 @@ small.infoRequerida {
 
 .pointer {
   cursor: pointer;
+}
+
+.obligatorio {
+  color: #F10024;
 }

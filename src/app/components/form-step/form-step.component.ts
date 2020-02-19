@@ -28,7 +28,7 @@ export class FormStepComponent{
   // Variables Calculadora
   valorCuota:number = 0;
   cuotas:number = 0;
-  tasa:number = 0.24;
+  tasa:number = 0.01;
   seguroTotal:number = 0;
   seguroCuota:number = 0;
   

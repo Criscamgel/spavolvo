@@ -186,14 +186,14 @@ button:focus {
     margin: 2px 21px 0px 22px;
     top: 10rem;
     @include tablet(){
-        width: 75%;
-        top: 14rem;
+        width: 76%;
+        top: 18rem;
     }
     @include deskopt(){
-        width: 53%;
+        width: 62%;
     }
     @include bigScreen(){
-        width: 54.5%;
+        width: 62.5%;
     }    
     .squareModal{
         z-index: 1;
@@ -213,14 +213,14 @@ button:focus {
             height: 51rem;
         }
         @include tablet(){
-            height: 31rem;            
+            height: 44rem;            
         }
         @include deskopt(){
-            height: 32rem;
+            height: 43rem;
         }
         @include bigScreen(){
             margin: 0px 0px 0px 36px;
-            height: 30rem;
+            height: 43rem;
             .contButton{
                 margin: 20px 0px 15px 10px;
             }
@@ -324,23 +324,34 @@ button{
     .logos{
         display: grid;
         grid-column: 2;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        @include tablet(){
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
     img.mercadolibreM{
         width: 60%;
         grid-column: 1;
         align-self: center;
         justify-self: center;
-
     }
 
     img.santanderWt{
-        width: 60%;
+        width: 50%;
         grid-column: 2;
         align-self: center;
         justify-self: left;
         @include tablet(){
+            width: 50%;
+            justify-self: left;
+        }
+        @include deskopt(){
+            width: 40%;
+            justify-self: left;
+        }
+        @include bigScreen(){
             width: 35%;
+            justify-self: left;
         }
     }
     img.mercadolibreT{
@@ -741,6 +752,10 @@ button{
 
   .pointer{
     cursor: pointer;
+  }
+
+  .obligatorio{
+      color: $color-rojo;
   }
 
 
