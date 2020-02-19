@@ -137,8 +137,6 @@ export class FormStepComponent{
     /* Calculadora */
 
 changeButtonCliente(val) {
-
-  console.log("val ---> " + val);
   
 
   let nmv = Math.pow((1 + this.tasa), (1 / 12)) - 1;
@@ -164,7 +162,15 @@ changeButtonCliente(val) {
       var vlrPartuno = vlrActual * nmv;
       var vlrPartdos = Math.pow((1 + nmv), - cuota)
       vlrPartdos = 1 - vlrPartdos;
-      this.valorCuota = Math.round(vlrPartuno / vlrPartdos);      
+      this.valorCuota = Math.round(vlrPartuno / vlrPartdos); 
+      
+      /* Seguro de la cuota */
+      var vlrPartunoSeg = this.seguroTotal * nmv;
+      var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+      vlrPartdosSeg = 1 - vlrPartdosSeg;
+      var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+      this.seguroCuota = seguroCta;
+      seguroCta = Math.round(seguroCta);
 
       break;
 
@@ -175,7 +181,15 @@ changeButtonCliente(val) {
         var vlrPartuno = vlrActual * nmv;
         var vlrPartdos = Math.pow((1 + nmv), - cuota)
         vlrPartdos = 1 - vlrPartdos;
-        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+      seguroCta = Math.round(seguroCta);
 
       break;
 
@@ -186,7 +200,15 @@ changeButtonCliente(val) {
         var vlrPartuno = vlrActual * nmv;
         var vlrPartdos = Math.pow((1 + nmv), - cuota)
         vlrPartdos = 1 - vlrPartdos;
-        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+        seguroCta = Math.round(seguroCta);
 
       break;
 
@@ -197,7 +219,15 @@ changeButtonCliente(val) {
         var vlrPartuno = vlrActual * nmv;
         var vlrPartdos = Math.pow((1 + nmv), - cuota)
         vlrPartdos = 1 - vlrPartdos;
-        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+        seguroCta = Math.round(seguroCta);
       
       break;
 
@@ -208,7 +238,15 @@ changeButtonCliente(val) {
         var vlrPartuno = vlrActual * nmv;
         var vlrPartdos = Math.pow((1 + nmv), - cuota)
         vlrPartdos = 1 - vlrPartdos;
-        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+        seguroCta = Math.round(seguroCta);
 
       break;
 
@@ -219,7 +257,15 @@ changeButtonCliente(val) {
         var vlrPartuno = vlrActual * nmv;
         var vlrPartdos = Math.pow((1 + nmv), - cuota)
         vlrPartdos = 1 - vlrPartdos;
-        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+        seguroCta = Math.round(seguroCta);
 
       break;
 
@@ -230,7 +276,15 @@ changeButtonCliente(val) {
         var vlrPartuno = vlrActual * nmv;
         var vlrPartdos = Math.pow((1 + nmv), - cuota)
         vlrPartdos = 1 - vlrPartdos;
-        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);     
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+        seguroCta = Math.round(seguroCta);
 
       break;
 

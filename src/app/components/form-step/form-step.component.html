@@ -106,11 +106,11 @@
                                             </div>
 
                                             <div class="col-12 col-sm-12 subTitulo">
-                                                    <small>Este será el valor de la cuota mensual<b class="obligatorio">*</b></small>
+                                                    <small>Este será el valor de la cuota mensual<b class="obligatorio">**</b></small>
                                             </div>
 
                                             <div class="col-12 col-sm-12">
-                                                    <mat-form-field class="full-width" appearance="outline">
+                                                    <mat-form-field class="full-width negValue" appearance="outline">
                                                             <input 
                                                             matInput
                                                             currencyMask
@@ -126,8 +126,8 @@
 
                                                         <div class="contDetalles" *ngIf="verDetalle">
                                                            <small>Valor cuota sin seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 : valorCuota | number:'1.0-0'}}<br>
-                                                            Costo total del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroCuota | number:'1.0-0'}}<br>
-                                                            Cuota mensual del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroTotal | number:'1.0-0'}}<br>
+                                                            Costo total del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroTotal | number:'1.0-0'}}<br>
+                                                            Cuota mensual del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroCuota | number:'1.0-0'}}<br>
                                                             Monto total a financiar: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :valorFinanciarCop | number:'1.0-0'}}<br></small>
                                                         </div>
                                             </div>

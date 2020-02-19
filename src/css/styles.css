@@ -918,3 +918,7 @@ small.infoRequerida {
 .obligatorio {
   color: #F10024;
 }
+
+.negValue input {
+  color: black !important;
+}
