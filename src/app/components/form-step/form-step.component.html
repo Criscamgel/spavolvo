@@ -30,7 +30,7 @@
                                                         name="valorFinanciar"
                                                         #valorFinanciar="ngModel"
                                                         [(ngModel)]="valorFinanciarCop"
-                                                        [options]="{ align: 'left', prefix: '$ ', thousands: '.', decimal: ',', precision: 0 }"
+                                                        [options]="{ align: 'left', prefix: '$ ', thousands: ',', decimal: ',', precision: 0 }"
                                                         [min]="minF"
                                                         required>
                                                         <mat-error *ngIf="valorFinanciar.touched && valorFinanciar.errors?.required" class="error error col-12">Inserta el valor a financiar</mat-error>   
@@ -298,7 +298,7 @@
                                     <input 
                                     matInput
                                     currencyMask
-                                    [options]="{ align: 'left', prefix: '$ ', thousands: '.', decimal: ',', precision: 0 }"
+                                    [options]="{ align: 'left', prefix: '$ ', thousands: ',', decimal: ',', precision: 0 }"
                                     placeholder="Ingresos Mensuales"
                                     name="ingresoMensual"
                                     #ingresoMensual="ngModel"
