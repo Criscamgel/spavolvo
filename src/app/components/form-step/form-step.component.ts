@@ -33,8 +33,8 @@ export class FormStepComponent{
   seguroCuota:number = 0;
   
 
-  min = this.env.min
-  minF = this.env.minF
+  min = 1200000;
+  minF = 20000000;
 
   contacto:ContactoInterface = {
     DatosBasicos: {
