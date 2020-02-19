@@ -138,6 +138,9 @@ export class FormStepComponent{
 
 changeButtonCliente(val) {
 
+  console.log("val ---> " + val);
+  
+
   let nmv = Math.pow((1 + this.tasa), (1 / 12)) - 1;
   this.seguroCuota = (1200 / 1000000) * this.valorFinanciarCop;
   this.contacto.OtrosDatos.ValorFinanciar = this.valorFinanciarCop; 

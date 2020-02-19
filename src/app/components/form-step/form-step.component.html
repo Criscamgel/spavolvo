@@ -1,13 +1,13 @@
 <div class="titlesPpal row">
     <div class="col-12 text-center titleOne">
-            <strong>Solicita la aprobación de tu crédito para carro, rápido y sin papeles</strong>
+            <strong>Conoce si tu crédito es viable en 1 minuto y sin papeles</strong>
     </div>
 </div>
 
 
 
-<mat-horizontal-stepper>
-        <mat-step label="Calcula tu cuota" [stepControl]="formPs" class="primerStep" [editable]="editable" linear="true">
+<mat-horizontal-stepper [disableRipple]="true" linear="true">
+        <mat-step label="Calcula tu cuota" [stepControl]="formPs" class="primerStep" [editable]="editable">
                             <!-- Formulario -->
                             <form #formPs="ngForm">
                                     <div class="row absolute dosStep">
@@ -31,6 +31,7 @@
                                                         #valorFinanciar="ngModel"
                                                         [(ngModel)]="valorFinanciarCop"
                                                         [options]="{ align: 'left', prefix: '$ ', thousands: ',', decimal: ',', precision: 0 }"
+                                                        (ngModelChange)="changeButtonCliente(cuotas)"
                                                         [min]="minF"
                                                         required>
                                                         <mat-error *ngIf="valorFinanciar.touched && valorFinanciar.errors?.required" class="error error col-12">Inserta el valor a financiar</mat-error>   
@@ -120,7 +121,7 @@
                                                             [(ngModel)]="valorCuota"
                                                             required
                                                             disabled>
-                                                            <mat-icon matSuffix (click)="verDetalles()">priority_high</mat-icon>
+                                                            <mat-icon matSuffix (click)="verDetalles()">info</mat-icon>
                                                         </mat-form-field>
 
                                                         <div class="contDetalles" *ngIf="verDetalle">
@@ -132,7 +133,7 @@
                                             </div>
                                             
                                             <div class="col-12 col-sm-12">
-                                                    <small><b class="obligatorio">*</b>Este valor corresponde al total sin seguros</small><br>
+                                                    <small><b class="obligatorio">** </b>Este valor corresponde al total sin seguros</small><br>
                                                     <small class="infoRequerida"><b class="obligatorio">*</b>Información requerida</small>
                                                     <hr>
                                             </div>                    
@@ -150,7 +151,7 @@
 
         <!-- Paso 2 -->
 
-        <mat-step label="Ingresa tus datos" [stepControl]="formTc" [editable]="editable" linear="true">
+        <mat-step label="Cuéntanos de ti" [stepControl]="formTc" [editable]="editable" linear="true" completed="false">
 
             <form #formTc="ngForm" (ngSubmit)="sendCentrales()">
                     <div class="row absolute unoStep">
@@ -419,9 +420,9 @@
     </mat-horizontal-stepper>
 
     <div class="row">
-            <div class="col-12 text-center pie">
-                    <div class="container">
-                    <img src="../assets/santandergris.png" alt="" class="col-12 santanderGray"><br>
+            <div class="col-12 pie">
+                    <div class="contPie">
+                    <img src="../assets/santandergris.png" alt="" class="santanderGray"><br>
                     <p class="small">© 2019 - Solicitud de Crédito - Entidad Vigilada por la Superintendencia Financiera de Colombia</p>
                     </div>
             </div>

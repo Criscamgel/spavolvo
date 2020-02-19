@@ -379,6 +379,22 @@ button {
 @media only screen and (min-width: 768px) {
   .encMercadolibre .logos {
     grid-template-columns: repeat(3, 1fr);
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .encMercadolibre .logos {
+    grid-template-columns: repeat(3, 1fr);
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .encMercadolibre .logos {
+    grid-template-columns: repeat(3, 1fr);
+    width: 60%;
   }
 }
 
@@ -393,19 +409,19 @@ button {
   width: 50%;
   grid-column: 2;
   align-self: center;
-  justify-self: left;
+  justify-self: center;
 }
 
 @media only screen and (min-width: 768px) {
   .encMercadolibre img.santanderWt {
-    width: 50%;
+    width: 60%;
     justify-self: left;
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .encMercadolibre img.santanderWt {
-    width: 40%;
+    width: 50%;
     justify-self: left;
   }
 }
@@ -433,6 +449,7 @@ button {
     grid-column: 1;
     align-self: center;
     justify-self: center;
+    width: 60%;
   }
 }
 
@@ -492,24 +509,31 @@ button {
 
 @media only screen and (min-width: 768px) {
   .mat-stepper-horizontal, .mat-stepper-vertical {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .mat-stepper-horizontal, .mat-stepper-vertical {
-    width: 85%;
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .mat-stepper-horizontal, .mat-stepper-vertical {
+    width: 50%;
   }
 }
 
 .pie img {
-  width: 60% !important;
+  width: 40%;
 }
 
 .pie p.small {
   font-size: 10px;
   line-height: 1.6;
+  text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -747,6 +771,7 @@ input[type="radio"] + div {
   box-shadow: 0px 1px 7px 0px #C2C2C2;
   background-color: white;
   border: none;
+  font-weight: 800;
   /* @include laptopDesktop() {
         border-radius: 15px;
       }

@@ -327,6 +327,16 @@ button{
         grid-template-columns: repeat(2, 1fr);
         @include tablet(){
             grid-template-columns: repeat(3, 1fr);
+            width: 60%;
+            margin: 0 auto;
+        }
+        @include deskopt(){
+            grid-template-columns: repeat(3, 1fr);
+            width: 60%;
+        }
+        @include bigScreen(){
+            grid-template-columns: repeat(3, 1fr);
+            width: 60%;
         }
     }
     img.mercadolibreM{
@@ -340,13 +350,13 @@ button{
         width: 50%;
         grid-column: 2;
         align-self: center;
-        justify-self: left;
+        justify-self: center;
         @include tablet(){
-            width: 50%;
+            width: 60%;
             justify-self: left;
         }
         @include deskopt(){
-            width: 40%;
+            width: 50%;
             justify-self: left;
         }
         @include bigScreen(){
@@ -367,8 +377,10 @@ button{
             grid-column: 1;
             align-self: center;
             justify-self: center;
+            width: 60%;
         }
     }
+
 }
 
 .logSantander{
@@ -412,27 +424,32 @@ button{
 .mat-stepper-horizontal, .mat-stepper-vertical {
     background-color: transparent;
     @include tablet(){
-        width: 80%;
+        width: 60%;
         margin: 0 auto;
     }
     @include deskopt(){
-        width: 85%;
+        width: 60%;
+    }
+    @include bigScreen(){
+        width: 50%;
     }
 }
 
 .pie{
     img{
-        width: 60% !important;
+        width: 40%;
     }
     p.small{
         font-size: 10px;
         line-height: 1.6;
+        text-align: center;
         @include tablet(){
             color: $color-white;
         }
         @include deskopt(){
             top: -14px;
             position: relative;
+            
         }
     }
 }
@@ -619,6 +636,7 @@ button{
       box-shadow: 0px 1px 7px 0px $color-btn-disabled;
       background-color: white;
       border: none;
+      font-weight: 800;
   
       /* @include laptopDesktop() {
         border-radius: 15px;
@@ -757,5 +775,6 @@ button{
   .obligatorio{
       color: $color-rojo;
   }
+  
 
 
