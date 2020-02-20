@@ -919,9 +919,14 @@ small.infoRequerida {
 }
 
 .obligatorio {
+  font-size: 13px;
   color: #F10024;
 }
 
 .negValue input {
   color: black !important;
+}
+
+.mat-form-field-required-marker {
+  color: #F10024;
 }
