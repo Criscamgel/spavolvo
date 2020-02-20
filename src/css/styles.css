@@ -224,7 +224,7 @@ button:focus {
   z-index: 1;
   background-color: #fff;
   overflow: auto;
-  height: 38rem;
+  height: 58rem;
   font-size: 12px;
   padding: 0px 18px 0px 18px;
   text-align: justify;
@@ -232,7 +232,7 @@ button:focus {
 
 @media only screen and (min-width: 320px) {
   .containerModal .squareModal {
-    height: 58rem;
+    height: 54rem;
   }
 }
 

@@ -204,12 +204,12 @@ button:focus {
         z-index: 1;
         background-color: $color-white;
         overflow: auto;
-        height: 38rem;
+        height: 58rem;
         font-size: 12px;
         padding: 0px 18px 0px 18px;
         text-align: justify;
         @include sSmall(){
-            height: 58rem;
+            height: 54rem;
         }
         @include mSmall(){
             height: 52rem;
