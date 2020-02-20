@@ -196,24 +196,27 @@ button:focus {
   background-color: #fff;
   margin: 2px 21px 0px 22px;
   top: 10rem;
+  /* @include mSmall(){
+        width: 55%;
+    } */
 }
 
 @media only screen and (min-width: 768px) {
   .containerModal {
-    width: 76%;
+    width: 54%;
     top: 18rem;
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .containerModal {
-    width: 62%;
+    width: 43%;
   }
 }
 
 @media only screen and (min-width: 1920px) {
   .containerModal {
-    width: 62.5%;
+    width: 36.5%;
   }
 }
 
@@ -229,7 +232,7 @@ button:focus {
 
 @media only screen and (min-width: 320px) {
   .containerModal .squareModal {
-    height: 54rem;
+    height: 58rem;
   }
 }
 
@@ -247,20 +250,20 @@ button:focus {
 
 @media only screen and (min-width: 768px) {
   .containerModal .squareModal {
-    height: 44rem;
+    height: 46rem;
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .containerModal .squareModal {
-    height: 43rem;
+    height: 46rem;
   }
 }
 
 @media only screen and (min-width: 1920px) {
   .containerModal .squareModal {
     margin: 0px 0px 0px 36px;
-    height: 43rem;
+    height: 45rem;
   }
   .containerModal .squareModal .contButton {
     margin: 20px 0px 15px 10px;

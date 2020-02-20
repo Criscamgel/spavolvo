@@ -185,15 +185,20 @@ button:focus {
     background-color: $color-white;
     margin: 2px 21px 0px 22px;
     top: 10rem;
+
+    /* @include mSmall(){
+        width: 55%;
+    } */
+    
     @include tablet(){
-        width: 76%;
+        width: 54%;
         top: 18rem;
     }
     @include deskopt(){
-        width: 62%;
+        width: 43%;
     }
     @include bigScreen(){
-        width: 62.5%;
+        width: 36.5%;
     }    
     .squareModal{
         z-index: 1;
@@ -204,7 +209,7 @@ button:focus {
         padding: 0px 18px 0px 18px;
         text-align: justify;
         @include sSmall(){
-            height: 54rem;
+            height: 58rem;
         }
         @include mSmall(){
             height: 52rem;
@@ -213,14 +218,14 @@ button:focus {
             height: 51rem;
         }
         @include tablet(){
-            height: 44rem;            
+            height: 46rem;            
         }
         @include deskopt(){
-            height: 43rem;
+            height: 46rem;
         }
         @include bigScreen(){
             margin: 0px 0px 0px 36px;
-            height: 43rem;
+            height: 45rem;
             .contButton{
                 margin: 20px 0px 15px 10px;
             }
