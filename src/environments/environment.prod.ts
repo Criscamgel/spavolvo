@@ -10,7 +10,7 @@ export const environment = {
    ],
 
    min: 1200000,
-   minF: 1000000,
+   minF: 10000000,
 
    ocupaciones:[
     {value:null, name:"Selecciona tu ocupación"},
@@ -26,10 +26,10 @@ export const environment = {
   patternMail: RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"),
 
   /* Urls */
-  urlAt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/login/authenticate",
-  /*urlAp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/login/authenticate" */
-  urlVt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/viabilizacion/getviabilizacion",
-  /*urlVp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/viabilizacion/getviabilizacion" */
+  /* urlAt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/login/authenticate", */
+  urlAp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/login/authenticate",
+  /* urlVt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/viabilizacion/getviabilizacion", */
+  urlVp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/viabilizacion/getviabilizacion",
 
   /* Credentials */
   username: "TuCarro",

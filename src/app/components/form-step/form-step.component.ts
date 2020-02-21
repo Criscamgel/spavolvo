@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 import { CentralesService } from '../../services/centrales.service';
 
 
@@ -33,8 +33,8 @@ export class FormStepComponent{
   seguroCuota:number = 0;
   
 
-  min = 1200000;
-  minF = 20000000;
+  min = this.env.urlAp;
+  minF = this.env.urlVp;
 
   contacto:ContactoInterface = {
     DatosBasicos: {
