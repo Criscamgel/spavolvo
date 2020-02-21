@@ -33,8 +33,8 @@ export class FormStepComponent{
   seguroCuota:number = 0;
   
 
-  min = this.env.urlAp;
-  minF = this.env.urlVp;
+  min = this.env.min;
+  minF = this.env.minF;
 
   contacto:ContactoInterface = {
     DatosBasicos: {
