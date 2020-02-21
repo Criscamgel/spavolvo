@@ -113,8 +113,6 @@ export class FormStepComponent{
         }
       })  
      }, 3000);
-
-     console.log(this.contacto);
      
     
   }
