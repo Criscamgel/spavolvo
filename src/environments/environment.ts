@@ -30,15 +30,15 @@ export const environment = {
   patternMail: RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"),
 
   /* Urls */
-  urlAt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/login/authenticate",
+/*   urlAt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/login/authenticate", */
   /* -- Prod -- */
-  /* urlAt: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/login/authenticate", */
+  urlAt: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/login/authenticate",
 
   /* getViabilizacion */
 
-  urlVt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/viabilizacion/getviabilizacion",
+/*   urlVt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/viabilizacion/getviabilizacion", */
   /* -- Prod -- */
-  /* urlVt: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/viabilizacion/getviabilizacion", */
+  urlVt: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/viabilizacion/getviabilizacion",
 
   /* Credentials */
   username: "TuCarro",
