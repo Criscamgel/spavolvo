@@ -383,11 +383,10 @@
         
 <!-- Paso 3 --><mat-step label="Respuesta inmediata" completed="false">
 
-        <div *ngIf="sppiner" class="col-12 spinnerCont">
-            <mat-spinner></mat-spinner>
-        </div> 
-
         <div class="row absolute tresStep">
+                <div *ngIf="sppiner" class="col-12 spinnerCont">
+                    <mat-spinner></mat-spinner>
+                </div>
                 <div class="text-center col-12 col-sm-12">                    
                     <div *ngIf="aprobado" class="col-12 container text-center animated fadeIn">                                     
                         <p class="title">¡Listo!</p>
