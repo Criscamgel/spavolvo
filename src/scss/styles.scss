@@ -2,6 +2,94 @@
 @import 'variables';
 @import 'mixins';
 
+/* Splash */
+
+.splash{
+    opacity: 0;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    background-color: $color-mercadolibre;
+    z-index: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    animation: slide 2s linear 1;
+        .mercadoLogo{
+            align-self: center;
+            justify-self: center;
+        }
+        .santander{
+            grid-row: 3;
+            align-self: initial;
+            justify-self: center;
+        }
+        .poBy{
+            grid-row: 2;
+            align-self: end;
+            justify-self: center;
+            color: $gris-tenue;
+        }
+    
+}
+
+.mat-step-header:hover{
+    background-color: transparent;
+    &:focus{
+        outline: none !important;
+    }
+}
+
+[tabindex="-1"]:focus {
+    outline: none !important;
+}
+
+@keyframes slide {
+    0% {
+        z-index: 3;
+        opacity: 0;
+    }
+    20% {
+        z-index: 3;
+        opacity: 0;
+    }
+    40% {
+        z-index: 3;
+        opacity: 1;
+  
+    }
+    60% {
+        z-index: 3;
+        opacity: 1;
+  
+    }
+    80% {
+        z-index: 3;
+        opacity: 1;
+    }
+    100% {
+        z-index: 0;
+        opacity: 0;
+    }
+  }
+
+.spinnerCont{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: absolute;
+    grid-template-rows: 1fr 1fr 1fr;
+    z-index: 2;
+    background: #ffffff85;
+    mat-spinner{
+        grid-column: 2;
+        grid-row: 2;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+/* Final Splash */
+
 
 html{
     overflow-x: hidden;
@@ -34,8 +122,8 @@ html{
     @include tablet() {       
 
         border-radius: 10px;
-        padding: 15px;
-        margin: 15px;
+        padding: 20px 10px 10px 0px;
+        margin: 0px 15px 15px 15px;
         background-color: #ffffff;
         box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.4);
     }    
@@ -73,7 +161,7 @@ input#defaultCheck1-input:focus {
     padding: 0px !important;
 }
 
-body{
+.principal {
     background-color: $color-fondo !important;
     @include tablet() {
         background-image: url(../assets/fondo.png);
@@ -91,6 +179,10 @@ body{
     @include deskopt(){
         margin: 10px 10px;
     }
+}
+
+.mat-error{
+    margin-top: 10px;
 }
 
 .titlesPpal{        
@@ -333,16 +425,16 @@ button{
         grid-template-columns: repeat(2, 1fr);
         @include tablet(){
             grid-template-columns: repeat(3, 1fr);
-            width: 60%;
+            width: 50%;
             margin: 0 auto;
         }
         @include deskopt(){
             grid-template-columns: repeat(3, 1fr);
-            width: 60%;
+            width: 50%;
         }
         @include bigScreen(){
             grid-template-columns: repeat(3, 1fr);
-            width: 60%;
+            width: 50%;
         }
     }
     img.mercadolibreM{
@@ -362,11 +454,11 @@ button{
             justify-self: left;
         }
         @include deskopt(){
-            width: 50%;
+            width: 60%;
             justify-self: left;
         }
         @include bigScreen(){
-            width: 35%;
+            width: 50%;
             justify-self: left;
         }
     }
@@ -382,8 +474,8 @@ button{
             display: block;
             grid-column: 1;
             align-self: center;
-            justify-self: center;
-            width: 60%;
+            justify-self: left;
+            width: 70%;
         }
     }
 
@@ -461,90 +553,6 @@ button{
 }
 
 
-.splash{
-    opacity: 0;
-    display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
-    background-color: $color-mercadolibre;
-    z-index: 0;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    animation: slide 2s linear 1;
-        .mercadoLogo{
-            align-self: center;
-            justify-self: center;
-        }
-        .santander{
-            grid-row: 3;
-            align-self: initial;
-            justify-self: center;
-        }
-        .poBy{
-            grid-row: 2;
-            align-self: end;
-            justify-self: center;
-            color: $gris-tenue;
-        }
-    
-}
-
-.mat-step-header:hover{
-    background-color: transparent;
-    &:focus{
-        outline: none !important;
-    }
-}
-
-[tabindex="-1"]:focus {
-    outline: none !important;
-}
-
-@keyframes slide {
-    0% {
-        z-index: 3;
-        opacity: 0;
-    }
-    20% {
-        z-index: 3;
-        opacity: 0;
-    }
-    40% {
-        z-index: 3;
-        opacity: 1;
-  
-    }
-    60% {
-        z-index: 3;
-        opacity: 1;
-  
-    }
-    80% {
-        z-index: 3;
-        opacity: 1;
-    }
-    100% {
-        z-index: 0;
-        opacity: 0;
-    }
-  }
-
-.spinnerCont{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    position: absolute;
-    grid-template-rows: 1fr 1fr 1fr;
-    z-index: 2;
-    background: #ffffff85;
-    mat-spinner{
-        grid-column: 2;
-        grid-row: 2;
-        align-self: center;
-        justify-self: center;
-    }
-}
-
 /* Animaciones */
 
 .animated {
@@ -586,8 +594,16 @@ button{
     animation-name: fadeIn;
 }
 
-
 /* Radio Buttons Group */
+
+.seleccionMeses {
+    margin-bottom: 30px;
+    width: 96%;
+}
+
+#inputDinero .mat-form-field-wrapper {
+    padding-bottom: 10px;
+}
 
 .contPeriodo {
     display: grid;    
@@ -600,6 +616,15 @@ button{
     @include tablet(){
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
+    grid-gap: 0px;
+    }
+
+    @include deskopt(){
+    grid-gap: 0px;    
+    }
+
+    @include bigScreen(){
+    grid-gap: 0px;    
     }
   
     /* span {
@@ -616,7 +641,7 @@ button{
     /* the following are the styles */
     border-radius: 3px;
     padding: 5px 5px;
-    background-color: $color-white;
+    background-color: #FDFDFD;
     border: 1px solid $grisOscuro !important;
     width: 95%;
     height: 50px;
@@ -688,7 +713,7 @@ button{
 
       .mes {
         grid-row: 1;
-        font-size: 12px;
+        font-size: 13px;
         color: $grissOscuro;
         align-self: center;
         text-align: center;
@@ -768,10 +793,6 @@ button{
     @include tablet(){
         font-size: 14px;
       } 
-  }
-
-  .mat-horizontal-stepper-header-container{
-      margin-top: 20px;
   }
 
   .pointer{

@@ -21,7 +21,7 @@
                                         </div>                                   
                                         
                                         <div class="col-12 col-sm-12">
-                                                <mat-form-field class="full-width" appearance="outline">
+                                                <mat-form-field id="inputDinero" class="full-width" appearance="outline">
                                                         <mat-label>¿Cuánto dinero deseas financiar?</mat-label>
                                                         <input 
                                                         matInput
@@ -30,7 +30,7 @@
                                                         name="valorFinanciar"
                                                         #valorFinanciar="ngModel"
                                                         [(ngModel)]="valorFinanciarCop"
-                                                        [options]="{ align: 'left', prefix: '$ ', thousands: ',', decimal: ',', precision: 0 }"
+                                                        [options]="{ align: 'left', prefix: '$ ', thousands: '.', decimal: ',', precision: 0 }"
                                                         (ngModelChange)="changeButtonCliente(cuotas)"
                                                         [min]="minF"
                                                         required>
@@ -38,6 +38,8 @@
                                                         <mat-error *ngIf="valorFinanciar.touched && valorFinanciar.errors?.min" class="error error col-12">El valor mínimo debe ser $ {{minF | number:'1.0-0'}}</mat-error>
                                                 </mat-form-field>
                                         </div>
+
+                                        <div class="seleccionMeses">
 
                                         <div class="col-12 col-sm-12 subTitulo">
                                             <small>¿A cuántos meses quieres pagar?<b class="obligatorio">*</b></small>
@@ -104,6 +106,7 @@
                                                     </div>
                                                 </span>
                                             </div>
+                                            </div>
 
                                             <div class="col-12 col-sm-12">
                                                     <mat-form-field class="full-width negValue" appearance="outline">
@@ -114,7 +117,7 @@
                                                             placeholder="0"
                                                             name="valorCuota"
                                                             #Valorcuota="ngModel"
-                                                            [options]="{ align: 'left', prefix: '$ ', thousands: ',', decimal: ',', precision: 0 }"
+                                                            [options]="{ align: 'left', prefix: '$ ', thousands: '.', decimal: ',', precision: 0 }"
                                                             [(ngModel)]="valorCuota"
                                                             required
                                                             disabled>

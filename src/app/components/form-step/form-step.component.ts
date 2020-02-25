@@ -125,7 +125,7 @@ export class FormStepComponent{
 
    reload()
     {
-    window.location.href="https://www.tucarro.com.co/"; 
+    window.location.href="https://www.carroya.com/"; 
     }
 
     verDetalles(){
