@@ -105,11 +105,11 @@ export class FormStepComponent{
         this.respuesta = resp.IdResultado;
         
         if(this.respuesta == 2 || this.respuesta == 3){
-          debugger;
+          
           this.sppiner = false
           this.aprobado = true
         }else{
-          debugger;
+          
           this.sppiner = false
           this.negado = true
         }
