@@ -10,7 +10,7 @@ function css(){
         cascade: false
     }))
     .pipe(sass({
-        outputStyle: 'expanded', //nested, compact, compressed
+        outputStyle: 'compressed', //nested, compact, compressed
     }))
     .pipe(gulp.dest('css'))
 }

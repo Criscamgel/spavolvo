@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 import { CentralesService } from '../../services/centrales.service';
 
 
@@ -33,8 +33,8 @@ export class FormStepComponent{
   seguroCuota:number = 0;
   
 
-  min = 1200000;
-  minF = 20000000;
+  min = this.env.min;
+  minF = this.env.minF;
 
   contacto:ContactoInterface = {
     DatosBasicos: {
@@ -105,16 +105,16 @@ export class FormStepComponent{
         this.respuesta = resp.IdResultado;
         
         if(this.respuesta == 2 || this.respuesta == 3){
+          debugger;
           this.sppiner = false
           this.aprobado = true
         }else{
+          debugger;
           this.sppiner = false
           this.negado = true
         }
       })  
      }, 3000);
-
-     console.log(this.contacto);
      
     
   }
@@ -127,7 +127,7 @@ export class FormStepComponent{
 
    reload()
     {
-    window.location.href="https://www.tucarro.com.co/"; 
+    window.location.href="https://www.carroya.com/"; 
     }
 
     verDetalles(){
