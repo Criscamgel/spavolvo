@@ -181,8 +181,8 @@ body {
     }
 }
 
-.mat-error{
-    margin-top: 10px;
+#uno{
+    margin: 10px 0px;
 }
 
 .titlesPpal{        
@@ -608,14 +608,15 @@ button{
 
 .contPeriodo {
     display: grid;    
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 20px;
     width: 100%;
     margin: 10px 10px;
+
   
     @include tablet(){
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-gap: 0px;
     }
