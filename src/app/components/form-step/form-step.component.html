@@ -7,13 +7,13 @@
 
 
 <mat-horizontal-stepper [disableRipple]="true" linear="true">
-        <mat-step label="Calcula tu cuota" [stepControl]="formPs" class="primerStep" [editable]="editable">
+        <mat-step label="Cuéntanos del carro" [stepControl]="formPs" class="primerStep" [editable]="editable">
                             <!-- Formulario -->
                             <form #formPs="ngForm">
                                     <div class="row absolute dosStep">
                                         <div class="col-12 col-sm-12">
                                             <div class="cntTitle">
-                                                <div class="title">Calcula tu cuota</div>
+                                                <div class="title">Cuéntanos del carro</div>
                                                 <small><b class="obligatorio">*</b>Información requerida</small>
                                             </div>
                                         <hr>
@@ -25,6 +25,7 @@
                                                         <mat-label>¿Cuánto dinero deseas financiar?</mat-label>
                                                         <input 
                                                         matInput
+                                                        type="tel"
                                                         currencyMask
                                                         placeholder="¿Cuánto dinero deseas financiar?"
                                                         name="valorFinanciar"
@@ -34,8 +35,8 @@
                                                         (ngModelChange)="changeButtonCliente(cuotas)"
                                                         [min]="minF"
                                                         required>
-                                                        <mat-error *ngIf="valorFinanciar.touched && valorFinanciar.errors?.required" class="error error col-12">Inserta el valor a financiar</mat-error>   
-                                                        <mat-error *ngIf="valorFinanciar.touched && valorFinanciar.errors?.min" class="error error col-12">El valor mínimo debe ser $ {{minF | number:'1.0-0'}}</mat-error>
+                                                        <mat-error id="uno" class="col-12 error" *ngIf="valorFinanciar.touched && valorFinanciar.errors?.required" class="error error col-12">Inserta el valor a financiar</mat-error>   
+                                                        <mat-error id="uno" class="col-12 error" *ngIf="valorFinanciar.touched && valorFinanciar.errors?.min" class="error error col-12">El valor mínimo debe ser $ {{minF | number:'1.0-0'}}</mat-error>
                                                 </mat-form-field>
                                         </div>
 
@@ -47,62 +48,43 @@
 
 
                                         <div class="contPeriodo">
-                                                <span class="radio">
-                    
-                                                                        
-                                                    <input id="seis" [(ngModel)]="cuotas" name="cuotaSeis"
-                                                        (click)="changeButtonCliente($event.target)"
-                                                        type="radio" value="6">
-                                                    <div>
-                                                        <div class="mes">6 meses</div>
-                                                    </div>
-                                                </span>
-                    
-                                                <span class="radio">
-                    
-                                                    <input id="doce" [(ngModel)]="cuotas" name="cuotaDoce"
-                                                        (click)="changeButtonCliente($event.target);"
-                                                        type="radio" value="12">
-                                                    <div>
-                                                        <div class="mes">12 meses</div>
-                                                    </div>
-                                                </span>
-                    
-                                                <span class="radio">
-                    
-                                                    <input id="veinticuatro" [(ngModel)]="cuotas" name="cuotaVeinteCuatro"
-                                                        (click)="changeButtonCliente($event.target);"
-                                                        type="radio" value="24">
-                                                    <div>
-                                                        <div class="mes">24 meses</div>
-                                                    </div>
-                                                </span>
-                    
-                                                <span class="radio">
+                                            <span class="radio">
 
-                                                    <input id="treintaSeis" [(ngModel)]="cuotas" name="cuotaTreintaSeis"
-                                                        (click)="changeButtonCliente($event.target);"
-                                                        type="radio" value="36">
-                                                    <div>
-                                                        <div class="mes">36 meses</div>
-                                                    </div>
-                                                </span>
+                                                <input id="cuarentaocho" [(ngModel)]="cuotas" name="cuarentaOcho"
+                                                    (click)="changeButtonCliente($event.target);"
+                                                    type="radio" value="48">
+                                                <div>
+                                                    <div class="mes">48 meses</div>
+                                                </div>
+                                            </span>
+                    
                                                 <span class="radio">
-
-                                                    <input id="cuarentaocho" [(ngModel)]="cuotas" name="cuarentaOcho"
-                                                        (click)="changeButtonCliente($event.target);"
-                                                        type="radio" value="48">
-                                                    <div>
-                                                        <div class="mes">48 meses</div>
-                                                    </div>
-                                                </span>
-                                                <span class="radio">
-
-                                                    <input id="sesenta" [(ngModel)]="cuotas" name="sesenTa"
+                    
+                                                    <input id="sesenta" [(ngModel)]="cuotas" name="seSenta"
                                                         (click)="changeButtonCliente($event.target);"
                                                         type="radio" value="60">
                                                     <div>
                                                         <div class="mes">60 meses</div>
+                                                    </div>
+                                                </span>
+                    
+                                                <span class="radio">
+                    
+                                                    <input id="setentados" [(ngModel)]="cuotas" name="setentaDos"
+                                                        (click)="changeButtonCliente($event.target);"
+                                                        type="radio" value="72">
+                                                    <div>
+                                                        <div class="mes">72 meses</div>
+                                                    </div>
+                                                </span>
+                    
+                                                <span class="radio">
+
+                                                    <input id="ochentacuatro" [(ngModel)]="cuotas" name="ochentaCuatro"
+                                                        (click)="changeButtonCliente($event.target);"
+                                                        type="radio" value="84">
+                                                    <div>
+                                                        <div class="mes">84 meses</div>
                                                     </div>
                                                 </span>
                                             </div>
@@ -110,7 +92,7 @@
 
                                             <div class="col-12 col-sm-12">
                                                     <mat-form-field class="full-width negValue" appearance="outline">
-                                                            <mat-label>Este será el valor de la cuota mensual<b class="obligatorio"> **</b></mat-label>
+                                                            <mat-label>Este será el valor aproximado de la cuota mensual</mat-label>
                                                             <input 
                                                             matInput
                                                             currencyMask
@@ -125,15 +107,15 @@
                                                         </mat-form-field>
 
                                                         <div class="contDetalles" *ngIf="verDetalle">
-                                                           <small>Valor cuota sin seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 : valorCuota | number:'1.0-0'}}<br>
-                                                            Costo total del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroTotal | number:'1.0-0'}}<br>
-                                                            Cuota mensual del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroCuota | number:'1.0-0'}}<br>
+                                                           <small>Valor cuota: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 : valorCuota | number:'1.0-0'}}<br>
+                                                            <!-- Costo total del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroTotal | number:'1.0-0'}}<br>
+                                                            Cuota mensual del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroCuota | number:'1.0-0'}}<br> -->
                                                             Monto total a financiar: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :valorFinanciarCop | number:'1.0-0'}}<br></small>
                                                         </div>
                                             </div>
                                             
                                             <div class="col-12 col-sm-12">
-                                                    <small *ngIf="!verDetalle"><b class="obligatorio">** </b>Este valor corresponde al total sin seguros</small><br>
+                                                    <!-- <small *ngIf="!verDetalle"><b class="obligatorio">** </b>Este valor corresponde al total sin seguros</small><br> -->
                                                     <small class="infoRequerida"><b class="obligatorio">*</b>Información requerida</small>
                                                     <hr>
                                             </div>                    
@@ -151,7 +133,7 @@
 
         <!-- Paso 2 -->
 
-        <mat-step label="Cuéntanos de ti" [stepControl]="formTc" [editable]="editable" linear="true" completed="false">
+        <mat-step label="Cuéntanos de ti" [stepControl]="formTc" [editable]="editable" linear="true">
 
             <form #formTc="ngForm" (ngSubmit)="sendCentrales()">
                     <div class="row absolute unoStep">
@@ -245,7 +227,7 @@
                                 placeholder="Teléfono de contacto"
                                 name="Celular"
                                 [(ngModel)]="contacto.DatosBasicos.Celular"
-                                minlength="7" 
+                                minlength="10" 
                                 maxlength="10"
                                 #celular="ngModel"
                                 (keypress)="oldNumbers($event)"
@@ -314,7 +296,7 @@
 
                         <div class="row">
                             <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <img class="logSantander" src="../../../assets/costumerFinance.png" alt="">
+                                <img class="logSantander" src="../../../assets/consumerFinance.png" alt="">
                             </div>
                             
                             <div class="col-6 col-sm-6 col-md-8 col-lg-8">
@@ -394,7 +376,7 @@
                         <img class="img-fluid" src="../../../assets/aprobado.png" alt="">
                         <p class="aprobado">¡Tu solicitud es viable!</p>
                         <p class="small">
-                        En menos de 24 horas uno de nuestros asesores se comunicará contigo para continuar tu solicitud de crédito 
+                        Pronto uno de nuestros asesores se comunicará contigo para continuar tu solicitud de crédito 
                         </p>
                         <hr>                    
                     </div>
@@ -423,8 +405,8 @@
     <div class="row">
             <div class="col-12 pie">
                     <div class="contPie">
-                    <img src="../assets/santandergris.png" alt="" class="santanderGray"><br>
-                    <p class="small">© 2019 - Solicitud de Crédito - Entidad Vigilada por la Superintendencia Financiera de Colombia</p>
+                    <img src="../../../assets/costumerFinance.png" alt="" class="santanderGray"><br>
+                    <p class="small">© 2020 – Solicitud de crédito</p>
                     </div>
             </div>
     </div>
