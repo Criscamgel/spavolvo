@@ -277,7 +277,7 @@ button:focus {
     position: absolute;
     background-color: $color-white;
     margin: 2px 21px 0px 22px;
-    top: 10rem;
+    top: 9rem;
 
     /* @include mSmall(){
         width: 55%;
@@ -285,7 +285,7 @@ button:focus {
     
     @include tablet(){
         width: 54%;
-        top: 18rem;
+        top: 17rem;
     }
     @include deskopt(){
         width: 43%;

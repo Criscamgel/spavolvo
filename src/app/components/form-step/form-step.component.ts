@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment.prod';
 import { CentralesService } from '../../services/centrales.service';
+
+import { registerLocaleData } from '@angular/common';
+import es from '@angular/common/locales/es';
 
 
 @Component({
@@ -11,7 +14,10 @@ import { CentralesService } from '../../services/centrales.service';
 export class FormStepComponent{
 
   constructor(private centrales: CentralesService) { }
-  
+
+  ngOnInit() {
+    registerLocaleData( es );
+  }
 
   mail = RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
   env = environment;
@@ -61,24 +67,16 @@ export class FormStepComponent{
 
   /* Functions */
 
-  oldLetters(event: any) {    
-    const pattern =  new RegExp(environment.patternLetter);    
-    let inputChar = String.fromCharCode(event.charCode);
-    if (event.keyCode != 8 && !pattern.test(inputChar)) {
-      event.preventDefault();
-    }
-  }
-
-  oldNumbers(event: any) {
-    const pattern =  new RegExp(environment.patternNumber);    
-    let inputChar = String.fromCharCode(event.charCode);
-    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+  patternCoincide(event, value) {
+    const pattern =  new RegExp(value);
+    const inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode !== 8 && !pattern.test(inputChar)) {
       event.preventDefault();
     }
   }
 
   chechedc(this){
-    this.contacto.OtrosDatos.AutorizaMareigua = true       
+    this.contacto.OtrosDatos.AutorizaMareigua = true;
   }
 
   sendCentrales(this){
