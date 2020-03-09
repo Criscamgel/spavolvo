@@ -19,7 +19,6 @@ export class FormStepComponent{
     registerLocaleData( es );
   }
 
-  mail = RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
   env = environment;
   modal:boolean = false;
   valorFinanciarCop:any = 0;
@@ -27,6 +26,7 @@ export class FormStepComponent{
   aprobado:boolean = false;
   negado:boolean = false;
   sppiner:boolean = true;
+  dateNow = new Date().getFullYear();
 
   // Variable ver detalles
   verDetalle:boolean = false;
