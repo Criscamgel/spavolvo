@@ -14,7 +14,7 @@ export const environment = {
    ],
 
    min: 1200000,
-   minF: 200000000,
+   minF: 20000000,
 
    ocupaciones:[
     {value:null, name:"Selecciona tu ocupación"},
@@ -26,24 +26,19 @@ export const environment = {
 
   /* Regex */
   patternLetter: "^[a-zA-Z áéíóúñÁÉÍÓÚÑ]+$",
-  patternNumber: "^[0-9]+$",
-  patternMail: RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"),
+  patternNumber: "[0-9]+$",
+  patternCel: "^3+[0-9]{0,10}$",
+  patternMail: "^(([^<>()\[\]\\.,;:\s@]+(\.[^<>()\[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$",
 
   /* Urls */
-/*   urlAt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/login/authenticate", */
-  /* -- Prod -- */
-  urlAt: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/login/authenticate",
-
-  /* getViabilizacion */
-
-/*   urlVt: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/viabilizacion/getviabilizacion", */
-  /* -- Prod -- */
-  urlVt: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/viabilizacion/getviabilizacion",
+  /* urlAp: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/login/authenticate", */
+  urlAp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/login/authenticate",
+  /* urlVp: "https://api.premiercredit.co:11445/PremierServices_API_EXT_TST/api/viabilizacion/getviabilizacion", */
+  urlVp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/viabilizacion/getviabilizacion",
 
   /* Credentials */
-  username: "TuCarro",
-  password: "tuC@rr02019",
-  respuesta: {}
+  username: "CarroYa",
+  password: "C@rr0Y@"
 
 };
 
