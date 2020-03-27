@@ -125,7 +125,7 @@ export class FormStepComponent{
 
    reload()
     {
-    window.location.href="https://www.carroya.com/"; 
+    window.location.href="https://www.jaguar.co/"; 
     }
 
     verDetalles(){
