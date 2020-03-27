@@ -1,6 +1,6 @@
 <div class="titlesPpal row">
     <div class="col-12 text-center titleOne">
-            <strong>Conoce si tu crédito es viable en 1 minuto y sin papeles</strong>
+            <strong>Solicita la aprobación de tu crédito para comprar un Jaguar, rápido y sin papeles</strong>
     </div>
 </div>
 
@@ -48,6 +48,44 @@
 
 
                                         <div class="contPeriodo">
+
+                                            <span class="radio">
+
+                                                <input id="seis" [(ngModel)]="cuotas" name="seIs"
+                                                    (click)="changeButtonCliente($event.target);"
+                                                    type="radio" value="6">
+                                                <div>
+                                                    <div class="mes">6 meses</div>
+                                                </div>
+                                            </span>
+                                            <span class="radio">
+
+                                                <input id="doce" [(ngModel)]="cuotas" name="doCe"
+                                                    (click)="changeButtonCliente($event.target);"
+                                                    type="radio" value="12">
+                                                <div>
+                                                    <div class="mes">12 meses</div>
+                                                </div>
+                                            </span>
+                                            <span class="radio">
+
+                                                <input id="veintecuatro" [(ngModel)]="cuotas" name="veinteCuatro"
+                                                    (click)="changeButtonCliente($event.target);"
+                                                    type="radio" value="24">
+                                                <div>
+                                                    <div class="mes">24 meses</div>
+                                                </div>
+                                            </span>
+                                            <span class="radio">
+
+                                                <input id="treintaseis" [(ngModel)]="cuotas" name="treintaSeis"
+                                                    (click)="changeButtonCliente($event.target);"
+                                                    type="radio" value="36">
+                                                <div>
+                                                    <div class="mes">36 meses</div>
+                                                </div>
+                                            </span>
+
                                             <span class="radio">
 
                                                 <input id="cuarentaocho" [(ngModel)]="cuotas" name="cuarentaOcho"
@@ -68,25 +106,7 @@
                                                     </div>
                                                 </span>
                     
-                                                <span class="radio">
-                    
-                                                    <input id="setentados" [(ngModel)]="cuotas" name="setentaDos"
-                                                        (click)="changeButtonCliente($event.target);"
-                                                        type="radio" value="72">
-                                                    <div>
-                                                        <div class="mes">72 meses</div>
-                                                    </div>
-                                                </span>
-                    
-                                                <span class="radio">
-
-                                                    <input id="ochentacuatro" [(ngModel)]="cuotas" name="ochentaCuatro"
-                                                        (click)="changeButtonCliente($event.target);"
-                                                        type="radio" value="84">
-                                                    <div>
-                                                        <div class="mes">84 meses</div>
-                                                    </div>
-                                                </span>
+                                                
                                             </div>
                                             </div>
 
@@ -407,7 +427,7 @@
             <div class="col-12 pie">
                     <div class="contPie">
                     <img src="../../../assets/costumerFinance.png" alt="" class="santanderGray"><br>
-                    <p class="small">© {{dateNow}} – Solicitud de crédito</p>
+                    <p class="small">© {{dateNow}} – Solicitud de Crédito - Entidad vigilada por la Superintendencia Financiera de Colombia</p>
                     </div>
             </div>
     </div>

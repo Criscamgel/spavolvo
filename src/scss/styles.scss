@@ -8,7 +8,7 @@
     opacity: 0;
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
-    background-color: $color-mercadolibre;
+    background-color: #ffffff;
     z-index: 0;
     height: 100%;
     position: absolute;
@@ -28,7 +28,7 @@
             grid-row: 2;
             align-self: end;
             justify-self: center;
-            color: $gris-tenue;
+            color: $color-negro;
         }
     
 }
@@ -411,7 +411,7 @@ button{
 }
 
 .encMercadolibre{
-    background-color: $color-mercadolibre;
+    background-color: $gris-tenue;
     display: grid;
     grid-template-columns: 0.1fr 1fr 0.1fr;
     position: fixed !important;
@@ -419,6 +419,17 @@ button{
     z-index: 1;
     top: 0;
     height: 50px;
+    @include tablet(){
+        background-color: #ffffff; 
+    }
+    @include deskopt(){
+        grid-template-columns: 0fr 0.7fr 0.1fr;
+        background-color: #ffffff; 
+    }
+    @include bigScreen(){
+        grid-template-columns: 0fr 0.7fr 0.1fr;
+        background-color: #ffffff; 
+    }
     .logos{
         display: grid;
         grid-column: 2;
@@ -438,7 +449,7 @@ button{
         }
     }
     img.mercadolibreM{
-        width: 60%;
+        width: 35%;
         grid-column: 1;
         align-self: center;
         justify-self: center;
@@ -475,7 +486,7 @@ button{
             grid-column: 1;
             align-self: center;
             justify-self: left;
-            width: 70%;
+            width: 50%;
         }
     }
 
@@ -512,7 +523,14 @@ button{
     display: block;
     @include deskopt(){
         display: grid;
-        grid-template-columns: 0.3fr 2fr 0.3fr;
+        grid-template-columns: 0fr 2fr 0.7fr;
+        app-form-step{
+            grid-column: 2;
+        }
+    }  
+    @include bigScreen(){
+        display: grid;
+        grid-template-columns: 0fr 2fr 0.7fr;
         app-form-step{
             grid-column: 2;
         }
@@ -616,16 +634,18 @@ button{
 
   
     @include tablet(){
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    grid-gap: 0px;
+    grid-gap: 8px;
     }
 
     @include deskopt(){
-    grid-gap: 0px;    
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 4px;    
     }
 
     @include bigScreen(){
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 0px;    
     }
   
