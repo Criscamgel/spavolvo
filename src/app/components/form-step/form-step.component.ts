@@ -19,7 +19,6 @@ export class FormStepComponent{
     registerLocaleData( es );
   }
 
-  mail = RegExp("^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
   env = environment;
   modal:boolean = false;
   valorFinanciarCop:any = 0;
@@ -27,6 +26,7 @@ export class FormStepComponent{
   aprobado:boolean = false;
   negado:boolean = false;
   sppiner:boolean = true;
+  dateNow = new Date().getFullYear();
 
   // Variable ver detalles
   verDetalle:boolean = false;
@@ -153,6 +153,83 @@ changeButtonCliente(val) {
   }
 
   switch (cuota) {
+
+    case 6:
+
+        this.seguroTotal  = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+        seguroCta = Math.round(seguroCta);
+      
+      break;
+
+    case 12:
+
+        this.seguroTotal  = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+        seguroCta = Math.round(seguroCta);
+      
+      break;
+
+    case 24:
+
+        this.seguroTotal  = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+        seguroCta = Math.round(seguroCta);
+      
+      break;
+
+    case 36:
+
+        this.seguroTotal  = Math.round(this.seguroCuota * cuota);  
+        var vlrActual = Math.round(this.valorFinanciarCop);
+        var vlrPartuno = vlrActual * nmv;
+        var vlrPartdos = Math.pow((1 + nmv), - cuota)
+        vlrPartdos = 1 - vlrPartdos;
+        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+        
+        /* Seguro de la cuota */
+        var vlrPartunoSeg = this.seguroTotal * nmv;
+        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
+        vlrPartdosSeg = 1 - vlrPartdosSeg;
+        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+        this.seguroCuota = seguroCta;
+        seguroCta = Math.round(seguroCta);
+      
+      break;
+
     case 48:
 
       this.seguroTotal = Math.round(this.seguroCuota * cuota);
@@ -189,45 +266,7 @@ changeButtonCliente(val) {
         this.seguroCuota = seguroCta;
       seguroCta = Math.round(seguroCta);
 
-      break;
-
-    case 72:
-
-        this.seguroTotal = Math.round(this.seguroCuota * cuota);  
-        var vlrActual = Math.round(this.valorFinanciarCop);
-        var vlrPartuno = vlrActual * nmv;
-        var vlrPartdos = Math.pow((1 + nmv), - cuota)
-        vlrPartdos = 1 - vlrPartdos;
-        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
-        
-        /* Seguro de la cuota */
-        var vlrPartunoSeg = this.seguroTotal * nmv;
-        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
-        vlrPartdosSeg = 1 - vlrPartdosSeg;
-        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
-        this.seguroCuota = seguroCta;
-        seguroCta = Math.round(seguroCta);
-
-      break;
-
-    case 84:
-
-        this.seguroTotal  = Math.round(this.seguroCuota * cuota);  
-        var vlrActual = Math.round(this.valorFinanciarCop);
-        var vlrPartuno = vlrActual * nmv;
-        var vlrPartdos = Math.pow((1 + nmv), - cuota)
-        vlrPartdos = 1 - vlrPartdos;
-        this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
-        
-        /* Seguro de la cuota */
-        var vlrPartunoSeg = this.seguroTotal * nmv;
-        var vlrPartdosSeg = Math.pow((1 + nmv), - cuota)
-        vlrPartdosSeg = 1 - vlrPartdosSeg;
-        var seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
-        this.seguroCuota = seguroCta;
-        seguroCta = Math.round(seguroCta);
-      
-      break;
+      break;    
 
     /*  */
     default:
