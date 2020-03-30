@@ -114,19 +114,26 @@ html{
 .mat-horizontal-stepper-header-container{
     
     border-radius: 0;
-    padding: 0;
-    margin: 0;
+    padding: 15px;
+    margin: 40px 0px 0px 0px;
     background-color: none;
     box-shadow: none;
 
     @include tablet() {       
 
         border-radius: 10px;
-        padding: 20px 10px 10px 0px;
-        margin: 0px 15px 15px 15px;
+        margin: 40px 0px 15px 0px;
         background-color: #ffffff;
         box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.4);
-    }    
+        padding: 0px;
+    }
+    
+    @include deskopt(){
+        margin: 40px 0px 15px 0px;
+    }
+    @include bigScreen(){
+        margin: 40px 0px 15px 0px;
+    }
 }
 
 .mat-stepper-horizontal-line{
@@ -288,7 +295,8 @@ button:focus {
         top: 17rem;
     }
     @include deskopt(){
-        width: 43%;
+        width: 42%;
+        top: 12rem;
     }
     @include bigScreen(){
         width: 36.5%;
@@ -314,7 +322,7 @@ button:focus {
             height: 46rem;            
         }
         @include deskopt(){
-            height: 46rem;
+            height: 52rem;
         }
         @include bigScreen(){
             margin: 0px 0px 0px 36px;
@@ -337,11 +345,24 @@ button:focus {
     padding: 10px;
 }
 
+.row{
+    margin: 0 auto !important;
+}
+
 .row.absolute {
     box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     background-color: $color-white;
     margin: 0px 15px 0px 15px !important;
+    @include tablet(){
+        margin: 0px 15px 0px 15px !important;
+    }
+    @include deskopt(){
+        margin: 0px !important;
+    }
+    @include bigScreen(){
+        margin: 0px !important;
+    }
 }
 
 .mat-horizontal-content-container{
@@ -411,7 +432,7 @@ button{
 }
 
 .encMercadolibre{
-    background-color: $gris-tenue;
+    background-color: $gris;
     display: grid;
     grid-template-columns: 0.1fr 1fr 0.1fr;
     position: fixed !important;
@@ -626,21 +647,20 @@ button{
 
 .contPeriodo {
     display: grid;    
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-gap: 5px; */
     width: 100%;
     margin: 10px 10px;
 
   
     @include tablet(){
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-gap: 8px;
     }
 
     @include deskopt(){
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 4px;    
     }
 
@@ -813,7 +833,7 @@ button{
   .mat-step-label{
       font-size: 10px;      
     @include tablet(){
-        font-size: 14px;
+        font-size: 12px;
       } 
   }
 
