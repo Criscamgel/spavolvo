@@ -18,7 +18,6 @@ export const environment = {
     {value:11, name:"Empleado"}, /* 16 */
     {value:2, name:"Independiente"} /* 3 */
    ],
-  
 
   /* Regex */
   patternLetter: "^[a-zA-Z áéíóúñÁÉÍÓÚÑ]+$",
@@ -33,7 +32,7 @@ export const environment = {
   urlVp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/viabilizacion/getviabilizacion",
 
   /* Credentials */
-  username: "CarroYa",
-  password: "C@rr0Y@",
+  username: "TuCarro",
+  password: "tuC@rr02019",
   respuesta: {}
 };
