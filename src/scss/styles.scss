@@ -364,7 +364,8 @@ button:focus {
 .mat-horizontal-content-container{
     padding: 0px !important;
     display: block;
-    /* height: 42rem; */
+    border: 1px solid $gris;
+    border-radius: 12px;
 }
 
 .mat-step-header{
