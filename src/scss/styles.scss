@@ -457,16 +457,16 @@ button{
             margin: 0 auto;
         }
         @include deskopt(){
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             width: 50%;
         }
         @include bigScreen(){
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             width: 50%;
         }
     }
     img.mercadolibreM{
-        width: 35%;
+        width: 25%;
         grid-column: 1;
         align-self: center;
         justify-self: center;
@@ -482,11 +482,11 @@ button{
             justify-self: left;
         }
         @include deskopt(){
-            width: 60%;
+            width: 70%;
             justify-self: left;
         }
         @include bigScreen(){
-            width: 50%;
+            width: 60%;
             justify-self: left;
         }
     }
@@ -503,7 +503,7 @@ button{
             grid-column: 1;
             align-self: center;
             justify-self: left;
-            width: 60%;
+            width: 40%;
         }
     }
 
@@ -556,6 +556,7 @@ button{
 
 .mat-stepper-horizontal, .mat-stepper-vertical {
     background-color: transparent;
+    padding: 10px;
     @include tablet(){
         width: 60%;
         margin: 0 auto;
@@ -852,6 +853,18 @@ button{
 
 .mat-step-text-label{
     padding: 5px;
+    @include sSmall(){
+        padding: 0px;
+    }
+    @include lSmall(){
+        padding: 0px;
+    }
+    @include mSmall(){
+        padding: 0px;
+    }
+    @include tablet(){
+        padding: 0px;
+    }
 }
   
 
