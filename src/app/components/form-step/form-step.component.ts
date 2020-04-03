@@ -125,7 +125,7 @@ export class FormStepComponent{
 
    reload()
     {
-    window.location.href="https://www.jaguar.co/"; 
+    window.location.href="https://www.landrover.co/"; 
     }
 
     verDetalles(){
