@@ -295,8 +295,8 @@ button:focus {
         top: 17rem;
     }
     @include deskopt(){
-        width: 42%;
-        top: 12rem;
+        width: 41%;
+        top: 13rem;
     }
     @include bigScreen(){
         width: 36.5%;
@@ -322,7 +322,7 @@ button:focus {
             height: 46rem;            
         }
         @include deskopt(){
-            height: 52rem;
+            height: 53rem;
         }
         @include bigScreen(){
             margin: 0px 0px 0px 36px;
