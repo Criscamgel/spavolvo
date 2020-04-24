@@ -4,6 +4,14 @@
 
 /* Splash */
 
+.mat-ripple, .mat-step-header .mat-step-header-ripple{
+    display: none !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 10px !important;
+}
+
 .splash{
     opacity: 0;
     display: grid;
@@ -116,16 +124,14 @@ html{
     border-radius: 0;
     padding: 15px;
     margin: 40px 0px 0px 0px;
-    background-color: none;
+    background-color: #ffffffed;
     box-shadow: none;
 
     @include tablet() {       
 
         border-radius: 10px;
         margin: 40px 0px 15px 0px;
-        background-color: #ffffff;
         box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.4);
-        padding: 0px;
     }
     
     @include deskopt(){
@@ -279,18 +285,18 @@ button:focus {
     padding: 8px;
 }
 
-.containerModal {
+/* .containerModal {
     z-index: 0;
     position: absolute;
     background-color: $color-white;
     margin: 2px 21px 0px 22px;
-    top: 9rem;
+    top: 9rem; */
 
     /* @include mSmall(){
         width: 55%;
     } */
     
-    @include tablet(){
+    /* @include tablet(){
         width: 54%;
         top: 17rem;
     }
@@ -332,7 +338,7 @@ button:focus {
             }
         }
     }
-}
+} */
 
 .santanderGray{
     @include tablet(){
@@ -352,7 +358,7 @@ button:focus {
 .row.absolute {
     box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    background-color: $color-white;
+    background-color: #ffffffde;
     @include deskopt(){
         margin: 0px !important;
     }
@@ -369,7 +375,8 @@ button:focus {
 }
 
 .mat-step-header{
-    margin-left: 20px;
+    margin: 0 20px;
+    grid-gap: 15px;
 }
 
 .title {
@@ -431,7 +438,7 @@ button{
 .encMercadolibre{
     background-color: $gris;
     display: grid;
-    grid-template-columns: 0.1fr 1fr 0.1fr;
+    grid-template-columns: 25% 1fr 25%;
     position: fixed !important;
     width: 100%;
     z-index: 1;
@@ -448,7 +455,7 @@ button{
         grid-template-columns: 0fr 0.7fr 0.1fr;
         background-color: #ffffff; 
     }
-    .logos{
+    /* .logos{
         display: grid;
         grid-column: 2;
         grid-template-columns: repeat(2, 1fr);
@@ -464,7 +471,7 @@ button{
         @include bigScreen(){
             grid-template-columns: repeat(4, 1fr);
             width: 50%;
-        }
+        } */
     }
     img.mercadolibreM{
         width: 25%;
@@ -535,7 +542,7 @@ button{
     }
 }
 
-.row.principal.grid{
+/* .row.principal.grid{
     background-color: $color-transparent;
     margin: 0px !important;
     display: block;
@@ -553,9 +560,9 @@ button{
             grid-column: 2;
         }
     }  
-}
+} */
 
-.mat-stepper-horizontal, .mat-stepper-vertical {
+/* .mat-stepper-horizontal, .mat-stepper-vertical {
     background-color: transparent;
     padding: 10px;
     @include tablet(){
@@ -568,7 +575,7 @@ button{
     @include bigScreen(){
         width: 50%;
     }
-}
+} */
 
 .pie{
     img{
