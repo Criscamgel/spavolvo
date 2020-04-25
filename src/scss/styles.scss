@@ -2,7 +2,16 @@
 @import 'variables';
 @import 'mixins';
 
-/* Splash */
+/* Focused color Label */
+.mat-focused .mat-form-field-label{
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+/* Focused border text field Mat */
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{
+    color: #000 !important;
+}
 
 .mat-ripple, .mat-step-header .mat-step-header-ripple{
     display: none !important;
@@ -11,6 +20,8 @@
 .mat-form-field-appearance-outline .mat-form-field-infix {
     padding: 10px !important;
 }
+/* Splash */
+
 
 .splash{
     opacity: 0;
@@ -122,8 +133,8 @@ html{
 .mat-horizontal-stepper-header-container{
     
     border-radius: 0;
-    padding: 15px;
-    margin: 40px 0px 0px 0px;
+    padding: 15px 0px;
+    margin: 60px 0px 0px 0px;
     background-color: #ffffffed;
     box-shadow: none;
 
@@ -375,8 +386,14 @@ button:focus {
 }
 
 .mat-step-header{
-    margin: 0 20px;
+    margin: 0;
     grid-gap: 15px;
+    @include deskopt(){
+    margin: 0 20px;
+    }
+    @include bigScreen(){
+    margin: 0 20px;
+    }
 }
 
 .title {
@@ -438,23 +455,43 @@ button{
 .encMercadolibre{
     background-color: $gris;
     display: grid;
-    grid-template-columns: 25% 1fr 25%;
+    grid-template-columns: 10% 1fr 10%;
     position: fixed !important;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     top: 0;
-    height: 50px;
     @include tablet(){
         background-color: #ffffff; 
     }
     @include deskopt(){
-        grid-template-columns: 0fr 0.7fr 0.1fr;
+        grid-template-columns: 25% 1fr 25%;
         background-color: #ffffff; 
     }
     @include bigScreen(){
-        grid-template-columns: 0fr 0.7fr 0.1fr;
+        grid-template-columns: 25% 1fr 25%;
         background-color: #ffffff; 
     }
+
+    .logos{
+        display: grid;
+        grid-column: 2;        
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+
+        @include tablet(){
+            grid-template-columns: 100px 210px;
+        }
+
+        @include deskopt(){
+            grid-template-columns: 100px 210px;
+        }
+
+        @include bigScreen(){
+            grid-template-columns: 100px 210px;
+        }
+
+        }
+
     /* .logos{
         display: grid;
         grid-column: 2;
@@ -471,10 +508,10 @@ button{
         @include bigScreen(){
             grid-template-columns: repeat(4, 1fr);
             width: 50%;
-        } */
-    }
+        } 
+    }*/
     img.mercadolibreM{
-        width: 25%;
+        width: 35%;
         grid-column: 1;
         align-self: center;
         justify-self: center;
@@ -511,7 +548,7 @@ button{
             grid-column: 1;
             align-self: center;
             justify-self: left;
-            width: 40%;
+            height: 80px;
         }
     }
 
@@ -713,7 +750,7 @@ button{
       border-radius: 5px;
       box-shadow: 0px 1px 7px 0px $color-btn-disabled;
       background-color: white;
-      border: none;
+      border: 2px solid #000 !important;
       font-weight: 800;
   
       /* @include laptopDesktop() {
@@ -871,7 +908,7 @@ button{
         padding: 0px;
     }
     @include tablet(){
-        padding: 0px;
+        padding: 20px;
     }
 }
   

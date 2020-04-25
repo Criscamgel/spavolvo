@@ -9,7 +9,7 @@ import es from '@angular/common/locales/es';
 @Component({
   selector: 'app-form-step',
   templateUrl: './form-step.component.html',
-  styleUrls: ['./form-step.component.css']
+  styleUrls: ['./form-step.component.scss']
 })
 export class FormStepComponent{
 

@@ -1,0 +1,44 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.fullContainer {
+    display: grid;
+    grid-template-columns: 7% 1fr 7%;
+    grid-template-rows: 1fr;
+    background-color: #ffffff;
+    @include tablet(){
+        grid-template-columns: 10% 1fr 10%;
+        background-color: transparent; 
+    } 
+    @include deskopt(){
+        grid-template-columns: 25% 1fr 25%;
+        background-color: transparent; 
+    }
+    @include bigScreen(){
+        grid-template-columns: 25% 1fr 25%;
+        background-color: transparent;
+    }
+}
+.containerModal{
+    grid-column: 2;
+    grid-row: 1/2;
+    z-index: 1;
+    margin-top: 23%;
+    background-color: #F1F2F1;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color: transparent !important;
+    grid-column: 2;
+    grid-row: 1/2;
+    
+}
+
+.squareModal {
+    overflow: auto;
+    height: 46rem;
+}
+
+
