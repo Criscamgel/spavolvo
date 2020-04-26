@@ -36,13 +36,13 @@
 
 
 <mat-horizontal-stepper [disableRipple]="true" linear="true">
-        <mat-step label="Cuéntanos del carro" [stepControl]="formPs" class="primerStep" [editable]="editable">
+        <mat-step label="Calcula tu cuota" [stepControl]="formPs" class="primerStep" [editable]="editable">
                             <!-- Formulario -->
                             <form #formPs="ngForm">
                                     <div class="row absolute dosStep">
                                         <div class="col-12 col-sm-12">
                                             <div class="cntTitle">
-                                                <div class="title">Cuéntanos del carro</div>
+                                                <div class="title">Calcula tu cuota</div>
                                                 <small><b class="obligatorio">*</b>Información requerida</small>
                                             </div>
                                         <hr>
@@ -50,8 +50,8 @@
                                         </div>                                   
                                         
                                         <div class="col-12 col-sm-12">
+                                            <small>¿Cuánto dinero deseas financiar?<b class="obligatorio">*</b></small>
                                                 <mat-form-field id="inputDinero" class="full-width" appearance="outline">
-                                                        <mat-label>¿Cuánto dinero deseas financiar?</mat-label>
                                                         <input 
                                                         matInput
                                                         type="tel"
@@ -122,8 +122,8 @@
                                             </div>
 
                                             <div class="col-12 col-sm-12">
+                                                <small>Este será el valor aproximado de la cuota mensual:</small>
                                                     <mat-form-field class="full-width negValue" appearance="outline">
-                                                            <mat-label>Este será el valor aproximado de la cuota mensual</mat-label>
                                                             <input 
                                                             matInput
                                                             currencyMask
@@ -164,14 +164,21 @@
 
         <!-- Paso 2 -->
 
-        <mat-step label="Cuéntanos de ti" [stepControl]="formTc" [editable]="editable" linear="true">
+        <mat-step label="Ingresa tus datos" [stepControl]="formTc" [editable]="editable" linear="true">
 
             <form #formTc="ngForm" (ngSubmit)="sendCentrales()">
                     <div class="row absolute unoStep">
-                    <div class="col-12 col-sm-12 mb-3">
-                        <div class="title">Cuéntanos de ti</div>
+
+                        <div class="col-12 col-sm-12">
+                            <div class="cntTitle">
+                                <div class="title">Ingresa tus datos</div>
+                                <small><b class="obligatorio">*</b>Información requerida</small>
+                            </div>
                         <hr>
 
+                        </div>
+
+                    <div class="col-12 col-sm-12 mb-3">
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>¿Cómo te llamas?</mat-label>
                         <input 
@@ -305,7 +312,7 @@
 
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-                                <img class="logSantander" src="../../../assets/consumerFinance.png" alt="">
+                                <img class="logSantander" src="../../../assets/LogoSantanderConsumerGris.png" alt="">
                             </div>
                             
                             <div class="col-12 col-sm-6 col-md-8 col-lg-8">

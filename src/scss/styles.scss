@@ -2,6 +2,23 @@
 @import 'variables';
 @import 'mixins';
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Nissan Brand;
+    transition: all 0.5s;
+  }
+
+  .mat-horizontal-stepper-header .mat-step-icon-selected{
+    background-color: #c3092f !important;
+  }
+
+/* Color Step background fondo */
+.mat-step-icon{
+    background-color: #000 !important;
+}
+
 /* Focused color Label */
 .mat-focused .mat-form-field-label{
     color: #000 !important;
@@ -154,10 +171,14 @@ html{
 }
 
 .mat-stepper-horizontal-line{
-    margin: 0 -50px !important;
+    margin: 0 -45px !important;
     border-top-width: 2px !important;
+    background: $color-negro;
     @include tablet(){
         margin: 0 -65px !important;
+    }
+    @include deskopt(){
+        margin: 0 -100px !important;
     }
 }
 
@@ -254,6 +275,7 @@ button:focus {
 }
 
 .contButton{
+    margin-top: 25px;
     button.anterior{
         display: none;
         color: $color-btn-activo;
@@ -399,7 +421,7 @@ button:focus {
 .title {
     text-align: center;
     padding: 20px 0px 0px 0px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .tycSmall{
@@ -413,8 +435,8 @@ button:focus {
 }
 
 hr{
-    border: 1px solid $gris-tenue !important;
-    margin: 20px 0px !important;
+    border: 1px solid $gris-transparente !important;
+    margin-top: 0 !important;
 }
 
 .checkTycOk{
@@ -798,7 +820,7 @@ button{
       .mes {
         grid-row: 1;
         font-size: 13px;
-        color: $grissOscuro;
+        color: $color-negro;
         align-self: center;
         text-align: center;
   
@@ -873,7 +895,8 @@ button{
   }
 
   .mat-step-label{
-      font-size: 10px;      
+      font-size: 10px;
+      font-weight: bold;      
     @include tablet(){
         font-size: 12px;
       } 
@@ -881,6 +904,7 @@ button{
 
   .pointer{
     cursor: pointer;
+    text-decoration: underline;
   }
 
   .obligatorio{
