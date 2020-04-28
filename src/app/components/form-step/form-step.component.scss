@@ -11,11 +11,11 @@
         background-color: transparent; 
     } 
     @include deskopt(){
-        grid-template-columns: 25% 1fr 25%;
+        grid-template-columns: 27% 1fr 27%;
         background-color: transparent; 
     }
     @include bigScreen(){
-        grid-template-columns: 25% 1fr 25%;
+        grid-template-columns: 27% 1fr 27%;
         background-color: transparent;
     }
 }

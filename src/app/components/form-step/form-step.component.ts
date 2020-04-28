@@ -125,7 +125,7 @@ export class FormStepComponent{
 
    reload()
     {
-    window.location.href="https://www.volkswagen.co/"; 
+    window.location.href="https://www.nissan.com.co/"; 
     }
 
     verDetalles(){

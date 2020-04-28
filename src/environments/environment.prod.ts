@@ -2,8 +2,8 @@ export const environment = {
   production: true,
 
   /* Options */
-  documentos:[    
-    {value:null, name:"Selecciona tu tipo de Identificación"},
+  documentos:[
+    {value:null, name:"Tipo de identificación"},
     {value:1, name:"Cédula de Ciudadanía"},
     {value:2, name:"Cédula de Extranjería"},
     {value:3, name:"NIT"}
@@ -13,7 +13,7 @@ export const environment = {
    minF: 20000000,
 
    ocupaciones:[
-    {value:null, name:"Selecciona tu ocupación"},
+    {value:null, name:"Tipo de ocupación"},
     {value:1, name:"Pensionado"}, /* 15 */
     {value:11, name:"Empleado"}, /* 16 */
     {value:2, name:"Independiente"} /* 3 */

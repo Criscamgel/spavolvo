@@ -10,6 +10,23 @@
     transition: all 0.5s;
   }
 
+  .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0 0 !important;
+  }
+
+  span.ng-star-inserted {
+    font-size: 12px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline{
+    top: 0.6rem !important;
+}
+
+  .mat-form-field-appearance-outline .mat-form-field-outline{
+      background-color: $color-white;
+      border-radius: 10px;
+  }
+
   .mat-horizontal-stepper-header .mat-step-icon-selected{
     background-color: #c3092f !important;
   }
@@ -486,11 +503,11 @@ button{
         background-color: #ffffff; 
     }
     @include deskopt(){
-        grid-template-columns: 25% 1fr 25%;
+        grid-template-columns: 27% 1fr 27%;
         background-color: #ffffff; 
     }
     @include bigScreen(){
-        grid-template-columns: 25% 1fr 25%;
+        grid-template-columns: 27% 1fr 27%;
         background-color: #ffffff; 
     }
 
@@ -569,7 +586,7 @@ button{
             display: block;
             grid-column: 1;
             align-self: center;
-            justify-self: left;
+            justify-self: center;
             height: 80px;
         }
     }
