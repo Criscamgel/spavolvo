@@ -157,7 +157,6 @@ changeButtonCliente(val) {
   let vlrPartdos = Math.pow((1 + nmv), - cuota);
   vlrPartdos = 1 - vlrPartdos;
   this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
-  console.log(this.valorCuota);
 
   /* Seguro de la cuota */
   const vlrPartunoSeg = this.seguroTotal * nmv;
@@ -166,7 +165,6 @@ changeButtonCliente(val) {
   let seguroCta = Math.round(vlrPartunoSeg / vlrPartdosSeg);
   this.seguroCuota = seguroCta;
   seguroCta = Math.round(seguroCta);
-  console.log(seguroCta);
 
   this.valorCuota += this.seguroCuota;
 
