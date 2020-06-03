@@ -1,9 +1,3 @@
-<div class="titlesPpal row">
-    <div class="col-12 text-center titleOne">
-            <strong>Solicita la aprobación de tu crédito para comprar un Nissan, rápido y sin papeles</strong>
-    </div>
-</div>
-
 <div class="fullContainer">
 
 <!-- Modal TYC -->
@@ -15,7 +9,7 @@
       <hr class="hrModal">
       <div class="btnTyc">
         <div class="squareModal">
-                Es requisito indispensable que el solicitante, entendido este como cualquier persona natural o jurídica que acceda al presente Portal (Nissan) y desee iniciar una solicitud para estudio de viabilidad de financiación de vehículo automotor con Santander Consumer Finance S.A.S (En adelante “Santander Consumer”), entienda y acepte de manera expresa, voluntaria e irrevocable los términos y condiciones que a continuación se indican:<br><br>
+                Es requisito indispensable que el solicitante, entendido este como cualquier persona natural o jurídica que acceda al presente Portal (Mazda/Vardí) y desee iniciar una solicitud para estudio de viabilidad de financiación de vehículo automotor con Santander Consumer Finance S.A.S (En adelante “Santander Consumer”), entienda y acepte de manera expresa, voluntaria e irrevocable los términos y condiciones que a continuación se indican:<br><br>
                 El presente Portal es solo un canal para recopilar información personal del solicitante, con la finalidad de poder realizar el estudio crediticio del mismo para la determinación de la aprobación o no del crédito.<br><br>                            
                 El otorgamiento de los planes de financiación anunciados así como las tasas ofrecidas, están sujetas al cumplimiento de las políticas de crédito de las entidades financieras aliadas de Santander Consumer y al perfil crediticio del solicitante.<br><br>
                 
@@ -121,7 +115,7 @@
                                             </div>
                                             </div>
 
-                                            <div class="col-12 col-sm-12">
+                                            <div *ngIf="cuotas" class="col-12 col-sm-12">
                                                 <small>Este será el valor aproximado de la cuota mensual:</small>
                                                     <mat-form-field class="full-width negValue" appearance="outline">
                                                             <input 
@@ -137,12 +131,6 @@
                                                             <!-- <mat-icon matSuffix (click)="verDetalles()">info</mat-icon> -->
                                                         </mat-form-field>
 
-                                                        <div class="contDetalles" *ngIf="verDetalle">
-                                                           <small>Valor cuota: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 : valorCuota | number:'1.0-0':'es'}}<br>
-                                                            <!-- Costo total del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroTotal | number:'1.0-0':'es'}}<br>
-                                                            Cuota mensual del seguro: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :seguroCuota | number:'1.0-0':'es'}}<br> -->
-                                                            Monto total a financiar: $ {{valorFinanciarCop == 0 || valorFinanciarCop == undefined ? 0 :valorFinanciarCop | number:'1.0-0':'es'}}<br></small>
-                                                        </div>
                                             </div>
                                             
                                             <div class="col-12 col-sm-12">
@@ -152,7 +140,7 @@
                                             </div>                    
                                         
                                         <div class="col-12 col-sm-12 col-md-12 contButton">
-                                                <button mat-button class="full-width siguiente" [disabled]="formPs.invalid || valorCuota === 0" matStepperNext>CONTINUAR</button>
+                                                <button mat-button class="full-width siguiente" [disabled]="formPs.invalid || valorCuota === 0 || !cuotas" matStepperNext>CONTINUAR</button>
                                         </div>
                                         
                                     </div> <!-- Row -->
@@ -379,7 +367,7 @@
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-12 contButton">
-                    <button mat-button class="full-width siguiente" id="stepTwo" (click)="reload()">VOLVER A NISSAN</button>
+                    <button mat-button class="full-width siguiente" id="stepTwo" (click)="reload()">VOLVER A MAZDA/VARDÍ</button>
                 </div>
           </div>
         </div>

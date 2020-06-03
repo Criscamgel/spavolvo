@@ -34,7 +34,7 @@ export class FormStepComponent{
   // Variables Calculadora
   valorCuota:number = 0;
   cuotas:number = 0;
-  tasa:number = 0.01;
+  tasa:number = 0.15;
   seguroTotal:number = 0;
   seguroCuota:number = 0;
   
@@ -137,9 +137,8 @@ export class FormStepComponent{
 changeButtonCliente(val) {
   
 
-  const nmv = Math.pow((1 + this.tasa), (1 / 12)) - 1;
-  this.seguroCuota = (1200 / 1000000) * this.valorFinanciarCop;
-  this.contacto.OtrosDatos.ValorFinanciar = this.valorFinanciarCop; 
+  const nmv = 0.0115;
+  this.contacto.OtrosDatos.ValorFinanciar = this.valorFinanciarCop;
   let cuota;
   if (val !== undefined) {
 
@@ -151,20 +150,29 @@ changeButtonCliente(val) {
 
   }
 
-  this.seguroTotal  = Math.round(this.seguroCuota * cuota);
+  this.seguroTotal = ((1220 / 1000000) * this.valorFinanciarCop) * cuota;
+  
   const vlrActual = Math.round(this.valorFinanciarCop);
   const vlrPartuno = vlrActual * nmv;
   let vlrPartdos = Math.pow((1 + nmv), - cuota);
   vlrPartdos = 1 - vlrPartdos;
   this.valorCuota = Math.round(vlrPartuno / vlrPartdos);
+  console.log(this.valorCuota);
+
   /* Seguro de la cuota */
   const vlrPartunoSeg = this.seguroTotal * nmv;
   let vlrPartdosSeg = Math.pow((1 + nmv), - cuota);
   vlrPartdosSeg = 1 - vlrPartdosSeg;
-  let seguroCta = (Math.round(vlrPartunoSeg) / vlrPartdosSeg);
+  let seguroCta = Math.round(vlrPartunoSeg / vlrPartdosSeg);
   this.seguroCuota = seguroCta;
   seguroCta = Math.round(seguroCta);
-  }
+  console.log(seguroCta);
+
+  this.valorCuota += this.seguroCuota;
+
+}
+
+  
 }
 
 export interface DatosBasicos {
