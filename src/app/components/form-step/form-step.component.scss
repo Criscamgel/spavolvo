@@ -39,6 +39,9 @@
 .squareModal {
     overflow: auto;
     height: 46rem;
+    @include sSmall(){
+        height: 60rem;
+    } 
 }
 
 

@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 @include mat-core();
-$tucarroform-primary: mat-palette($mat-red, A700);
+$tucarroform-primary: mat-palette($mat-blue, A700);
 $tucarroform-accent: mat-palette($mat-grey, A700);
 $tucarroform-warn: mat-palette($mat-grey, A700);
 $tucarroform-theme: mat-light-theme($tucarroform-primary, $tucarroform-accent, $tucarroform-warn);
