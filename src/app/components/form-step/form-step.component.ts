@@ -125,7 +125,7 @@ export class FormStepComponent{
 
    reload()
     {
-    window.location.href="https://www.mazda.com.co/"; 
+    window.location.href="https://www.mazdavardi.com.co/"; 
     }
 
     verDetalles(){
