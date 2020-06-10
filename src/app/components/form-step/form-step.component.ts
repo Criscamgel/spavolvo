@@ -127,7 +127,7 @@ export class FormStepComponent{
 
    reload()
     {
-    window.location.href="https://www.kia.com/"; 
+    window.location.href = constantes.linkWebAliado; 
     }
 
     verDetalles(){

@@ -458,7 +458,7 @@ button{
     width: 100%;
     z-index: 2;
     top: 0;
-    border-bottom: 3px solid $color-mercadolibre;
+    border-top: 3px solid $color-mercadolibre;
     @include tablet(){
         grid-template-columns: 27% 1fr 27%;
     }
