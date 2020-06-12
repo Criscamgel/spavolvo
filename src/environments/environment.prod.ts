@@ -33,6 +33,6 @@ export const environment = {
 
   /* Credentials */
   username: "Mazda",
-  password: "tuC@m4zd4",
+  password: "m4zd4",
   respuesta: {}
 };
