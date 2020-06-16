@@ -65,7 +65,7 @@
     opacity: 0;
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
-    background-color: $color-white;
+    background-color: $color-negro;
     z-index: 0;
     height: 100%;
     position: absolute;
@@ -451,28 +451,28 @@ button{
 }
 
 .encMercadolibre{
-    background-color: $color-white;
+    background-color: $color-negro;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto auto auto;
     position: fixed !important;
     width: 100%;
     z-index: 2;
     top: 0;
     border-top: 3px solid $color-mercadolibre;
     @include tablet(){
-        grid-template-columns: 27% 1fr 27%;
+        grid-template-columns: 8% auto 48%;
     }
     @include deskopt(){
-        grid-template-columns: 27% 1fr 27%;
+        grid-template-columns: 8% auto 48%;
     }
     @include bigScreen(){
-        grid-template-columns: 27% 1fr 27%; 
+        grid-template-columns: 8% auto 48%; 
     }
 
     .logos{
         display: grid;
         grid-column: 2;        
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto auto auto;
         grid-gap: 30px;
         }
 
@@ -497,19 +497,18 @@ button{
         display: block;
         grid-column: 1;
         align-self: center;
-        justify-self: center;
-        height: 80px;
-        padding: 3%;
-        padding: 20% 20%;
+        justify-self: left;
+        padding: 5% 5%;
+        width: 70%;
 
         @include tablet(){
-            padding: 10% 10%;
+            padding: 5% 5%;
         }
         @include deskopt(){
-            padding: 10% 10%;
+            padding: 5% 5%;
         }
         @include bigScreen(){
-            padding: 10% 10%;
+            padding: 5% 5%;
         }
     }
 
@@ -550,13 +549,27 @@ button{
         line-height: 1.6;
         text-align: center;
         @include tablet(){
-            color: $color-negro;
+            color: $color-white;
         }
         @include deskopt(){
             top: -14px;
             position: relative;
             
         }
+    }
+}
+
+.pie{
+    display: grid;
+    grid-template-columns: 7% auto 7%;
+    @include tablet(){
+        grid-template-columns: 8% auto 48%;
+    }
+    @include deskopt(){
+        grid-template-columns: 8% auto 48%;
+    }
+    @include bigScreen(){
+        grid-template-columns: 8% auto 48%;
     }
 }
 
@@ -801,6 +814,8 @@ button{
 .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
     background-color: $numeroStep !important;
 }
+
+
   
 
 
