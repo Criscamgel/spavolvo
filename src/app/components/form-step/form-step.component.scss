@@ -3,19 +3,19 @@
 
 .fullContainer {
     display: grid;
-    grid-template-columns: 7% 1fr 7%;
+    grid-template-columns: 7% auto 7%;
     grid-template-rows: 1fr;
     background-color: #ffffff;
     @include tablet(){
-        grid-template-columns: 27% 1fr 27%;
+        grid-template-columns: 8% auto 48%;
         background-color: transparent; 
     } 
     @include deskopt(){
-        grid-template-columns: 27% 1fr 27%;
+        grid-template-columns: 8% auto 48%;
         background-color: transparent; 
     }
     @include bigScreen(){
-        grid-template-columns: 27% 1fr 27%;
+        grid-template-columns: 8% auto 48%;
         background-color: transparent;
     }
 }
