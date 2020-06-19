@@ -1,4 +1,4 @@
 export const constantes = {
     logoSantander: './assets/consumerFinance.png',
-    linkWebAliado: 'https://www.dodge.com.co/'
+    linkWebAliado: 'https://www.ramlatam.com/co/'
 }
