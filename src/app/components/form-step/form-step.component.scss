@@ -7,15 +7,15 @@
     grid-template-rows: 1fr;
     background-color: #ffffff;
     @include tablet(){
-        grid-template-columns: 8% auto 48%;
+        grid-template-columns: 48% auto 8%;
         background-color: transparent; 
     } 
     @include deskopt(){
-        grid-template-columns: 8% auto 48%;
+        grid-template-columns: 48% auto 8%;
         background-color: transparent; 
     }
     @include bigScreen(){
-        grid-template-columns: 8% auto 48%;
+        grid-template-columns: 48% auto 8%;
         background-color: transparent;
     }
 }
