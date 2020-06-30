@@ -65,7 +65,7 @@
     opacity: 0;
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
-    background-color: $color-negro;
+    background-color: $color-white;
     z-index: 0;
     height: 100%;
     position: absolute;
@@ -451,7 +451,7 @@ button{
 }
 
 .encMercadolibre{
-    background-color: $color-negro;
+    background-color: $color-white;
     display: grid;
     grid-template-columns: auto auto auto;
     position: fixed !important;
@@ -499,7 +499,7 @@ button{
         align-self: center;
         justify-self: left;
         padding: 5% 5%;
-        width: 70%;
+        width: 40%;
 
         @include tablet(){
             padding: 5% 5%;
