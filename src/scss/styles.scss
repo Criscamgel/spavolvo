@@ -676,10 +676,13 @@ button{
       /* style for the checked/selected state */
       border-radius: 5px;
       box-shadow: 0px 1px 7px 0px $color-btn-disabled;
-      background-color: white;
-      border: 2px solid #000 !important;
       font-weight: 800;
+      background-color: $numeroStep;
+      .mes{
+        color: $color-white !important;
     }
+    }
+    
   }
   
   /* Radio Button */
@@ -710,7 +713,7 @@ button{
       .mes {
         grid-row: 1;
         font-size: 13px;
-        color: $color-negro;
+        color: $color-negro;        
         align-self: center;
         text-align: center;
       }
