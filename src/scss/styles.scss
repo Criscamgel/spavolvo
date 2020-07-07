@@ -563,13 +563,13 @@ button{
     display: grid;
     grid-template-columns: 7% auto 7%;
     @include tablet(){
-        grid-template-columns: 48% auto 8%;
+        grid-template-columns: 8% auto 48%;
     }
     @include deskopt(){
-        grid-template-columns: 48% auto 8%;
+        grid-template-columns: 8% auto 48%;
     }
     @include bigScreen(){
-        grid-template-columns: 48% auto 8%;
+        grid-template-columns: 8% auto 48%;
     }
 }
 
