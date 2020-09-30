@@ -15,7 +15,7 @@ export const environment = {
    ocupaciones:[
     {value:null, name:"Tipo de ocupación"},
     {value:1, name:"Pensionado"}, /* 15 */
-    {value:11, name:"Empleado"}, /* 16 */
+    {value:1, name:"Empleado"}, /* 16 */
     {value:2, name:"Independiente"} /* 3 */
    ],
 
@@ -32,7 +32,7 @@ export const environment = {
   urlVp: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/viabilizacion/getviabilizacion",
 
   /* Credentials */
-  username: "TuCarro",
-  password: "tuC@rr02019",
+  username: "volvo",
+  password: "v0lv0_ap1",
   respuesta: {}
 };
